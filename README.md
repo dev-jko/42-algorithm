@@ -11,7 +11,7 @@
 8. hash
 9. graph
 
-## code convention
+## coding convention
 - 우선순위는 가독성, 성능, 짧은 코드 순으로 한다.
 - 42 seoul의 norminette 준수를 기본으로 한다.
 - 1파일 5함수 제한은 제외한다.
