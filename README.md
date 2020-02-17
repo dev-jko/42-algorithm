@@ -1,7 +1,7 @@
 # 42-algo-basic
 
 ## index
-1. linked list
+1. [linked list](./linked_list/README.md)
 2. stack
 3. queue
 4. deque
