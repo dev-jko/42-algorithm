@@ -73,6 +73,14 @@
 	void list_clear(t_linked_list *list, void (*free_data)(void *));
 	```
 
+### free_list
+- 목록의 메모리 할당을 해제하는 함수를 작성하세요.
+- 요소의 데이터는 free_data를 사용해서 메모리 할당을 해제해야 합니다.
+- 목록에 있는 요소와 목록 모두 해제해야 합니다.
+	```
+	void free_list(t_linked_list *list, void (*free_data)(void *));
+	```
+
 ### list_foreach
 - 목록에 있는 모든 요소의 data에 매개변수로 주어진 함수 f를 적용하는 함수를 작성하세요.
 	```

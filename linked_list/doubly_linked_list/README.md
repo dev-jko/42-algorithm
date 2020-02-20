@@ -62,9 +62,17 @@
 	```
 
 ### list_clear
-- 목록 전체를 삭제하는 함수를 작성하세요.
+- 목록에 있는 전체 요소를 삭제하는 함수를 작성하세요.
 	```
 	void list_clear(t_linked_list *list);
 	```
+
+### free_list
+- 목록의 메모리 할당을 해제하는 함수를 작성하세요.
+- 목록에 있는 요소와 목록 모두 해제해야 합니다.
+	```
+	void free_list(t_linked_list *list);
+	```
+
 	
 [뒤로 가기](..)

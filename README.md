@@ -7,7 +7,11 @@
 	1. [circular linked list](./linked_list/circular_linked_list)
 	1. [baekjoon](./linked_list#baekjoon)
 	1. [생각해보기](./linked_list#생각해보기)
-2. stack
+2. [stack](./stack)
+	1. [stack(array)](./stack/stack_array)
+	1. [stack(linked list)](./stack/stack_linked_list)
+	1. [baekjoon](./stack#baekjoon)
+	1. [생각해보기](./stack#생각해보기)
 3. queue
 4. deque
 5. tree
