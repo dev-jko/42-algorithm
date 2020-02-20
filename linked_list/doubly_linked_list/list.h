@@ -1,9 +1,9 @@
-typedef struct	s_list
+typedef struct	s_node
 {
 	int		data;
-	struct s_list	*prev;
-	struct s_list	*next;
-}		t_list;
+	struct s_node	*prev;
+	struct s_node	*next;
+}		t_node;
 
 typedef struct s_linked_list
 {
