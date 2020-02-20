@@ -6,6 +6,7 @@
 	1. [doubly linked list](./linked_list/doubly_linked_list)
 	1. [circular linked list](./linked_list/circular_linked_list)
 	1. [baekjoon](./linked_list#baekjoon)
+	1. [생각해보기](./linked_list#생각해보기)
 2. stack
 3. queue
 4. deque

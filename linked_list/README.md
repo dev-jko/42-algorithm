@@ -7,6 +7,7 @@
 1. [doubly linked list](./doubly_linked_list)
 1. [circular linked list](./circular_linked_list)
 1. [baekjoon](#baekjoon)
+1. [생각해보기](#생각해보기)
 
 ## baekjoon
 
@@ -14,6 +15,9 @@
 
 - [2562번 최댓값](https://www.acmicpc.net/problem/2562")
 - [1546번 평균](https://www.acmicpc.net/problem/1546")
+
+## 생각해보기
+- array(배열)과 linked list의 차이점
 
 
 [뒤로 가기](https://github.com/nadarm/42-algo-basic)
