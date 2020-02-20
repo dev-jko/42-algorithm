@@ -2,6 +2,9 @@
 
 ## index
 1. [linked list](./linked_list)
+	1. [singly linked list](./linked_list/singly_linked_list)
+	1. [doubly linked list](./linked_list/doubly_linked_list)
+	1. [circular linked list](./linked_list/circular_linked_list)
 2. stack
 3. queue
 4. deque

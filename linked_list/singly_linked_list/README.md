@@ -1,5 +1,7 @@
 # Singly Linked List
-[뒤로가기](..)
+
+[뒤로 가기](..)
+
 ## exercise 00
 - 아래와 같은 list.h를 사용 합니다.
 	```
@@ -59,4 +61,4 @@
 	int list_add(t_list **begin_list, int data, int n);
 	```
 
-[뒤로가기](..)
+[뒤로 가기](..)

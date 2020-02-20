@@ -1,6 +1,11 @@
 # Linked List
-[뒤로가기](..)
+
+[뒤로 가기](./..)
+
 ## index
-- [singly linked list](./singly_linked_list)
-- [doubly linked list](./doubly_linked_list)
-- [circular linked list](./circular_linked_list)
+1. [singly linked list](./singly_linked_list)
+1. [doubly linked list](./doubly_linked_list)
+1. [circular linked list](./circular_linked_list)
+
+
+[뒤로 가기](./..)
