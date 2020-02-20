@@ -1,4 +1,4 @@
-# 42-algo-basic
+# 42-algorithm
 
 ## index
 1. [linked list](./linked_list)
