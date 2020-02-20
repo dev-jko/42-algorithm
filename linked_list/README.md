@@ -1,6 +1,6 @@
 # Linked List
 
-[뒤로 가기](./..)
+[뒤로 가기](https://github.com/nadarm/42-algo-basic)
 
 ## index
 1. [singly linked list](./singly_linked_list)
@@ -8,4 +8,4 @@
 1. [circular linked list](./circular_linked_list)
 
 
-[뒤로 가기](./..)
+[뒤로 가기](https://github.com/nadarm/42-algo-basic)
