@@ -7,18 +7,17 @@
 	1. [circular linked list](./linked_list/circular_linked_list)
 	1. [baekjoon](./linked_list#baekjoon)
 	1. [생각해보기](./linked_list#생각해보기)
-2. [stack](./stack)
+1. [stack](./stack)
 	1. [stack(array)](./stack/stack_array)
 	1. [stack(linked list)](./stack/stack_linked_list)
 	1. [baekjoon](./stack#baekjoon)
 	1. [생각해보기](./stack#생각해보기)
-3. queue
-4. deque
-5. tree
-6. priority queue, heap
-7. sort
-8. hash
-9. graph
+1. queue & deque
+1. tree
+1. priority queue, heap
+1. sort
+1. hash
+1. graph
 
 ## coding convention
 - 우선순위는 가독성, 성능, 짧은 코드 순으로 한다.

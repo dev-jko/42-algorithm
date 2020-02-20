@@ -10,7 +10,7 @@
 	{
 		unsigned int	max_size;
 		int		top_index;
-		void		*data;
+		void		**data;
 	}		t_stack;
 	```
 
@@ -18,7 +18,7 @@
 - t_stack형 struct를 반환 하는 함수를 작성하세요.
 - 반환되는 t_stack는 메모리 할당과 초기화를 거쳐야합니다.
 	```
-	t_stack *stack_init(void);
+	t_stack *stack_init(unsigned int max_size);
 	```
 	
 ### stack_push
