@@ -1,6 +1,6 @@
 # Deque
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
 1. [deque(linked list)](./deque_linked_list)
@@ -17,4 +17,4 @@
 - array로 deque를 구현하려면?
 
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)

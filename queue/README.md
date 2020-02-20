@@ -1,6 +1,6 @@
 # Queue
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
 1. [queue(array)](./queue_array)
@@ -19,4 +19,4 @@
 - array로 queue를 효율성 있게 구현하려면?
 
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)

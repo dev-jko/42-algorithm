@@ -1,6 +1,6 @@
 # Linked List
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
 1. [singly linked list](./singly_linked_list)
@@ -19,4 +19,4 @@ array를 사용하면 더 쉬울 수도 있지만 실습을 위해 linked list�
 - array와 linked list의 차이점
 
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)

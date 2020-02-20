@@ -1,6 +1,6 @@
 # Stack
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
 1. [stack(array)](./stack_array)
@@ -21,4 +21,4 @@
 - stack이 사용되는 상황
 
 
-[뒤로 가기](https://github.com/nadarm/42-algo-basic)
+[뒤로 가기](https://github.com/nadarm/42-algorithm)
