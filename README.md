@@ -5,6 +5,7 @@
 	1. [singly linked list](./linked_list/singly_linked_list)
 	1. [doubly linked list](./linked_list/doubly_linked_list)
 	1. [circular linked list](./linked_list/circular_linked_list)
+	1. [baekjoon](./linked_list#baekjoon)
 2. stack
 3. queue
 4. deque
