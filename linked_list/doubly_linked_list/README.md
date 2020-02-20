@@ -5,20 +5,26 @@
 ## exercise 00
 - 아래와 같은 list.h를 사용 합니다.
 	```
-		typedef struct	s_node
-		{
-			int		data;
-			struct s_node	*prev;
-			struct s_node	*next;
-		}		t_node;
+	typedef struct	s_node
+	{
+		int		data;
+		struct s_node	*prev;
+		struct s_node	*next;
+	}		t_node;
 
-		typedef struct s_linked_list
-		{
-			unsigned int	size;
-			t_node		**head;
-			t_node		**tail;
-		}		t_linekd_list;
+	typedef struct s_linked_list
+	{
+		unsigned int	size;
+		t_node		**head;
+		t_node		**tail;
+	}		t_linekd_list;
+	```
 
+### list_init
+- t_linked_list형 struct를 반환 하는 함수를 작성하세요.
+- 반환되는 t_linked_list는 메모리 할당과 초기화를 거쳐야합니다.
+	```
+	t_linked_list *list_init(void);
 	```
 
 ### create_elem
@@ -27,7 +33,7 @@
 	t_node *create_elem(int data);
 	```
 
-## list_add
+### list_add
 - 목록의 n번 인덱스에 data를 갖는 새로운 요소를 생성하는 함수를 작성하세요.
 - n이 목록의 요소의 수보다 클 경우엔 마지막 위치에 생성하세요.
 - 생성된 요소의 인덱스를 반환 합니다.
@@ -48,18 +54,17 @@
 	t_node *list_get(t_linked_list *list, int n);
 	```
 
-## list_find
-- 목록에서 data의 값이 같은 요소를 반환하는 함수를 작성하세요.
-- 없을 경우엔 널포인터를 반환 합니다.
-	```
-	t_node *list_find(t_linked_list *list, int data);
-	```
-
-## list_remove
+### list_remove
 - 목록에서 n번 인덱스의 요소를 삭제하는 함수를 작성하세요.
 - 삭제에 성공 했을 때는 1, 실패 했을 때는 0을 반환 합니다.
 	```
 	int list_remove(t_linked_list *list, int n);
+	```
+
+### list_clear
+- 목록 전체를 삭제하는 함수를 작성하세요.
+	```
+	void list_clear(t_linked_list *list);
 	```
 	
 [뒤로 가기](..)
