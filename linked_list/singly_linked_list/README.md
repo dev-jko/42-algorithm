@@ -41,10 +41,10 @@
 	```
 
 ### list_find
-- 목록에서 data의 값이 같은 요소를 반환하는 함수를 작성하세요.
-- 없을 경우엔 널포인터를 반환 합니다.
+- 목록에서 data의 값이 같은 요소의 인덱스를 반환하는 함수를 작성하세요.
+- 없을 경우엔 음수를 반환 합니다.
 	```
-	t_node *list_find(t_node *begin_list, int data);
+	int list_find(t_node *begin_list, int data);
 	```
 
 ### list_remove
