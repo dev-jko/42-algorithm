@@ -23,9 +23,10 @@
 	1. [생각해보기](./deque#생각해보기)
 1. [tree](./tree)
 	1. [binary search tree](./tree/binary_search_tree)
+	1. [heap](./tree/heap)
 	1. [baekjoon](./tree#baekjoon)
 	1. [생각해보기](./tree#생각해보기)
-1. priority queue, heap
+1. priority queue
 1. sort
 1. hash
 1. graph
