@@ -8,7 +8,10 @@
 1. [생각해보기](#생각해보기)
 
 ## baekjoon
-- [5430번 AC](https://www.acmicpc.net/problem/5430)
+tree를 사용해 풀어봅시다.
+- [1920번 수 찾기](https://www.acmicpc.net/problem/1920)
+- [5639번 이진 검색 트리](https://www.acmicpc.net/problem/5639)
+- [1991번 트리 순회](https://www.acmicpc.net/problem/1991)
 
 ## 생각해보기
 - tree가 사용되는 상황
