@@ -3,6 +3,7 @@
 [뒤로 가기](..)
 
 ## exercise 00
+- allowed functions : malloc, free
 - array를 사용하여 queue을 구현 합니다.
 - 아래와 같은 queue.h를 사용 합니다.
 	```

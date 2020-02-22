@@ -3,6 +3,7 @@
 [뒤로 가기](..)
 
 ## exercise 00
+- allowed functions : malloc, free
 - binary search tree을 구현 합니다.
 - 아래와 같은 tree.h를 사용 합니다.
 	```

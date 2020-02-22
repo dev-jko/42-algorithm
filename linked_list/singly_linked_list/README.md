@@ -3,6 +3,7 @@
 [뒤로 가기](..)
 
 ## exercise 00
+- allowed functions : malloc, free
 - 아래와 같은 list.h를 사용 합니다.
 	```
 		typedef struct	s_node

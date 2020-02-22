@@ -3,6 +3,7 @@
 [뒤로 가기](..)
 
 ## exercise 00
+- allowed functions : malloc, free
 - linked list를 사용하여 stack을 구현 합니다.
 - 아래와 같은 stack.h를 사용 합니다.
 	```
