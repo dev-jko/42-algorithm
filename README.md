@@ -2,30 +2,10 @@
 
 ## index
 1. [linked list](./linked_list)
-	1. [singly linked list](./linked_list/singly_linked_list)
-	1. [doubly linked list](./linked_list/doubly_linked_list)
-	1. [circular linked list](./linked_list/circular_linked_list)
-	1. [baekjoon](./linked_list#baekjoon)
-	1. [생각해보기](./linked_list#생각해보기)
 1. [stack](./stack)
-	1. [stack(array)](./stack/stack_array)
-	1. [stack(linked list)](./stack/stack_linked_list)
-	1. [baekjoon](./stack#baekjoon)
-	1. [생각해보기](./stack#생각해보기)
 1. [queue](./queue)
-	1. [queue(array)](./queue/queue_array)
-	1. [queue(linked list)](./queue/queue_linked_list)
-	1. [baekjoon](./queue#baekjoon)
-	1. [생각해보기](./queue#생각해보기)
 1. [deque](./deque)
-	1. [deque(linked list)](./deque/deque_linked_list)
-	1. [baekjoon](./deque#baekjoon)
-	1. [생각해보기](./deque#생각해보기)
 1. [tree](./tree)
-	1. [binary search tree](./tree/binary_search_tree)
-	1. [heap](./tree/heap)
-	1. [baekjoon](./tree#baekjoon)
-	1. [생각해보기](./tree#생각해보기)
 1. priority queue
 1. sort
 1. hash

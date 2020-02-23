@@ -5,6 +5,7 @@
 ## index
 1. [binary search tree](./binary_search_tree)
 1. [heap](./heap)
+1. [trie(prefix tree)](./trie)
 1. [baekjoon](#baekjoon)
 1. [생각해보기](#생각해보기)
 
