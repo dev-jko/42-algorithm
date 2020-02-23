@@ -17,7 +17,9 @@ tree를 사용해 풀어봅시다.
 - [1927번 최소 힙](https://www.acmicpc.net/problem/1927)
 - [11279번 최대 힙](https://www.acmicpc.net/problem/11279)
 - [11286번 절댓값 힙](https://www.acmicpc.net/problem/11286)
-- []()
+- [14425번 문자열 집합](https://www.acmicpc.net/problem/14425)
+- [4258번 생태학](https://www.acmicpc.net/problem/4358)
+- [5052번 전화번호 목록](https://www.acmicpc.net/problem/5052)
 
 ## 생각해보기
 - tree가 사용되는 상황
