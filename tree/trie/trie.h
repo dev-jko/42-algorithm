@@ -1,6 +1,10 @@
-typedef struct	s_heap
+typedef struct	s_node
 {
-	unsigned int	max_size;
-	int		(*cmp)(void *, void *);
-	void		**data;
-}		t_heap;
+	struct	s_node	next[26];
+	int		finish;
+}		t_node;
+
+typedef struct	s_trie
+{
+	t_node	*root[26];
+}		t_trie;
