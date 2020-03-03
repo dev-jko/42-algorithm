@@ -83,12 +83,10 @@ int list_find(t_node *begin_list, int data)
 	while (curr)
 	{
 		if (curr->data == data)
-			break ;
+			return (i);
 		curr = curr->next;
 		i++;
 	}
-	if (curr)
-		return (i);
 	return (-1);
 }
 
