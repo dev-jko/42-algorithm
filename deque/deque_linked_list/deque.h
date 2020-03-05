@@ -5,9 +5,9 @@ typedef struct	s_node
 	struct s_node	*next;
 }		t_node;
 
-typedef struct s_deque
+typedef struct	s_deque
 {
 	unsigned int	size;
-	t_node		**front;
-	t_node		**back;
+	t_node		*front;
+	t_node		*back;
 }		t_deque;
