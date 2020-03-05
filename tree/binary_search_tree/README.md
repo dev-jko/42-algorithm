@@ -16,7 +16,7 @@
 
 	typedef struct	s_binary_search_tree
 	{
-		t_node	**root;
+		t_node	*root;
 		int	(*cmp)(void *, void *);
 	}		t_tree;
 	```

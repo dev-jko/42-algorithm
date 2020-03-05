@@ -1,6 +1,6 @@
 typedef struct	s_node
 {
-	struct	s_node	next[26];
+	struct	s_node	*next[26];
 	int		finish;
 }		t_node;
 
