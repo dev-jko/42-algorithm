@@ -1,4 +1,4 @@
-typedef struct s_queue
+typedef struct	s_queue
 {
 	unsigned int	max_size;
 	int		last_index;

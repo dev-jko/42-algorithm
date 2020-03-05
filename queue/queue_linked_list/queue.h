@@ -4,9 +4,9 @@ typedef struct	s_node
 	struct s_node	*next;
 }		t_node;
 
-typedef struct s_queue
+typedef struct	s_queue
 {
 	unsigned int	size;
-	t_node		**head;
-	t_node		**tail;
+	t_node		*head;
+	t_node		*tail;
 }		t_queue;
