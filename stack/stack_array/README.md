@@ -7,7 +7,7 @@
 - array를 사용하여 stack을 구현 합니다.
 - 아래와 같은 stack.h를 사용 합니다.
 	```
-	typedef struct s_stack
+	typedef struct	s_stack
 	{
 		unsigned int	max_size;
 		int		top_index;
