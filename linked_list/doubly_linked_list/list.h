@@ -5,9 +5,9 @@ typedef struct	s_node
 	struct s_node	*next;
 }		t_node;
 
-typedef struct s_linked_list
+typedef struct	s_linked_list
 {
 	unsigned int	size;
-	t_node		**head;
-	t_node		**tail;
+	t_node		*head;
+	t_node		*tail;
 }		t_linked_list;
