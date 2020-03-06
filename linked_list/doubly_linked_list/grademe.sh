@@ -1,7 +1,15 @@
 dir=`dirname $0`
 
-rm a.out
-gcc -Wall -Wextra -Werror *.c $dir/grademe_files/test.c -I.
+if [ -e ./a.out ] ; then
+	rm a.out
+fi
+if [ -e ./user_output ] ; then
+	rm user_output
+fi
+if [ -e ./leaks_result ] ; then
+	rm leaks_result
+fi
+gcc -Wall -Wextra -Werror -g *.c $dir/grademe_files/test.c -I.
 
 if [ ! -e ./a.out ] ; then
 	echo "컴파일 에러"
@@ -22,6 +30,13 @@ if [ ! -e ./leaks_result ] ; then
 else
 	cat leaks_result | grep leaked
 fi
-
-rm user_output a.out leaks_result
+if [ -e ./a.out ] ; then
+	rm a.out
+fi
+if [ -e ./user_output ] ; then
+	rm user_output
+fi
+if [ -e ./leaks_result ] ; then
+	rm leaks_result
+fi
 echo "================ end ==================="
