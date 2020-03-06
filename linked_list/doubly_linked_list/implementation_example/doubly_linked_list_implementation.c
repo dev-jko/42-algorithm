@@ -29,8 +29,6 @@ t_node		*create_elem(int data)
 
 int		list_size(t_linked_list *list)
 {
-	int i;
-
 	if (list == 0)
 		return (0);
 	return (list->size);
