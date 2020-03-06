@@ -8,14 +8,14 @@ if [ ! -e ./a.out ] ; then
 fi
 ./a.out > user_output
 
-echo "\n============ check diff ================"
+echo "============ check diff ================"
 if [ ! -e $dir/grademe_files/doubly_linked_list_output ] ; then
 	echo "doubly_linked_list_output 파일이 없습니다."
 else
 	diff user_output $dir/grademe_files/doubly_linked_list_output
 fi
 
-echo "\n============ check leaks ==============="
+echo "============ check leaks ==============="
 if [ ! -e ./leaks_result ] ; then
 	echo "leaks check 결과 파일이 없습니다"
 else
@@ -23,4 +23,4 @@ else
 fi
 
 rm user_output a.out leaks_result
-echo "\n================ end ==================="
+echo "================ end ==================="

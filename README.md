@@ -1,5 +1,7 @@
 # 42-algorithm
 
+- 오타, 추가, 수정 PR & Feedback 무조건 환영합니다
+
 ## index
 1. [linked list](./linked_list)
 1. [stack](./stack)
@@ -20,4 +22,8 @@
 - 42 seoul의 norminette 준수를 기본으로 한다.
 - 1파일 5함수 제한은 제외한다.
 - 함수 25줄 제한은 최대한 지키고 30줄까지 인정한다.
+
+## contribution & feedback
+[nadarm](https://github.com/nadarm)
+[365kim](https://github.com/365kim)
 
