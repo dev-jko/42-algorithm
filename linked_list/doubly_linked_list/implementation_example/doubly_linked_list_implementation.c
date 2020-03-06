@@ -1,5 +1,4 @@
 #include "list.h"
-#include <stdio.h>
 #include <stdlib.h>
 
 t_linked_list	*list_init(void)
@@ -142,6 +141,13 @@ void		free_list(t_linked_list *list)
 	free(list);
 }
 
+
+//////////////////////////////////////////////////////////////////////////////////
+
+
+/*
+#include <stdio.h>
+
 void print_list(t_linked_list *list)
 {
 	t_node *curr = list->head;
@@ -228,3 +234,4 @@ int main(void)
 	system("leaks a.out > leaks_result");
 	return (0);
 }
+*/

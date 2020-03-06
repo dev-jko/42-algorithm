@@ -75,5 +75,9 @@
 	void free_list(t_linked_list *list);
 	```
 
-	
+## grademe
+- `grademe.sh`, `grademe_files`가 있는 디렉토리에 소스코드를 넣는다 (main함수는 지우거나 주석처리)
+- 터미널 명령어 `sh ./grademe.sh`를 입력
+
+
 [뒤로 가기](..)
