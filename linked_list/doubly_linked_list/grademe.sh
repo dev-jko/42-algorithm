@@ -1,6 +1,6 @@
 dir=`dirname $0`
 
-gcc *.c $dir/grademe_files/test.c -I.
+gcc -Wall -Wextra -Werror *.c $dir/grademe_files/test.c -I.
 
 if [ ! -e ./a.out ] ; then
 	echo "컴파일 에러"

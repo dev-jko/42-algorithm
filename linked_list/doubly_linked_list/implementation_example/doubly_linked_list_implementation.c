@@ -39,7 +39,7 @@ t_node		*list_get(t_linked_list *list, int n)
 	t_node	*curr;
 	int	i;
 
-	if (list == 0 || n < 0 || n >= list->size)
+	if (list == 0 || n < 0 || n >= (int)list->size)
 		return (0);
 	i = 0;
 	curr = list->head;
@@ -80,7 +80,7 @@ int		list_add(t_linked_list *list, int data, int n)
 
 	if (list == 0 || n < 0)
 		return (-1);
-	if (n >= list->size)
+	if (n >= (int)list->size)
 		return (list_add_last(list, data));
 	if ((curr = list_get(list, n)) == 0 || (new = create_elem(data)) == 0)
 		return (-1);
@@ -99,7 +99,7 @@ int		list_remove(t_linked_list *list, int n)
 {
 	t_node *curr;
 
-	if (list == 0 || n < 0 || n >= list->size)
+	if (list == 0 || n < 0 || n >= (int)list->size)
 		return (0);
 	if ((curr = list_get(list, n)) == 0)
 		return (0);
