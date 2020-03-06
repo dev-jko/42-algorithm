@@ -34,14 +34,6 @@
 	t_node *create_elem(int data);
 	```
 
-### list_add
-- 목록의 n번 인덱스에 data를 갖는 새로운 요소를 생성하는 함수를 작성하세요.
-- n이 목록의 요소의 수보다 클 경우엔 마지막 위치에 생성하세요.
-- 생성된 요소의 인덱스를 반환 합니다.
-	```
-	int list_add(t_linked_list *list, int data, int n);
-	```
-
 ### list_size
 - 목록에 있는 요소의 개수를 반환하는 함수를 작성하세요.
 	```
@@ -53,6 +45,14 @@
 - 목록에 있는 요소의 수가 더 적을 땐, 널포인터를 반환 합니다.
 	```
 	t_node *list_get(t_linked_list *list, int n);
+	```
+
+### list_add
+- 목록의 n번 인덱스에 data를 갖는 새로운 요소를 생성하는 함수를 작성하세요.
+- n이 목록의 요소의 수보다 클 경우엔 마지막 위치에 생성하세요.
+- 생성된 요소의 인덱스를 반환 합니다.
+	```
+	int list_add(t_linked_list *list, int data, int n);
 	```
 
 ### list_remove
