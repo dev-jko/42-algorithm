@@ -1,5 +1,6 @@
 dir=`dirname $0`
 
+rm a.out
 gcc -Wall -Wextra -Werror *.c $dir/grademe_files/test.c -I.
 
 if [ ! -e ./a.out ] ; then
