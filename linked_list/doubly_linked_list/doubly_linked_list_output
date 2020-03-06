@@ -1,0 +1,143 @@
+index 0 -> 0
+
+index 0 -> 1
+index 1 -> 0
+
+index 0 -> 1
+index 1 -> 0
+index 2 -> 2
+
+index 0 -> 1
+index 1 -> 0
+index 2 -> 2
+index 3 -> 3
+
+index 0 -> 1
+index 1 -> 4
+index 2 -> 0
+index 3 -> 2
+index 4 -> 3
+
+index 0 -> 1
+index 1 -> 5
+index 2 -> 4
+index 3 -> 0
+index 4 -> 2
+index 5 -> 3
+
+1
+5
+4
+0
+index 0 -> 1
+index 1 -> 5
+index 2 -> 4
+index 3 -> 0
+index 4 -> 2
+index 5 -> 3
+index 6 -> 6
+
+index 0 -> 1
+index 1 -> 5
+index 2 -> 4
+index 3 -> 0
+index 4 -> 2
+index 5 -> 3
+index 6 -> 6
+index 7 -> 7
+
+index 0 -> 1
+index 1 -> 8
+index 2 -> 5
+index 3 -> 4
+index 4 -> 0
+index 5 -> 2
+index 6 -> 3
+index 7 -> 6
+index 8 -> 7
+
+index 0 -> 1
+index 1 -> 9
+index 2 -> 8
+index 3 -> 5
+index 4 -> 4
+index 5 -> 0
+index 6 -> 2
+index 7 -> 3
+index 8 -> 6
+index 9 -> 7
+
+1
+index 0 -> 9
+index 1 -> 8
+index 2 -> 5
+index 3 -> 4
+index 4 -> 0
+index 5 -> 2
+index 6 -> 3
+index 7 -> 6
+index 8 -> 7
+
+rev index 8 -> 7
+rev index 7 -> 6
+rev index 6 -> 3
+rev index 5 -> 2
+rev index 4 -> 0
+rev index 3 -> 4
+rev index 2 -> 5
+rev index 1 -> 8
+rev index 0 -> 9
+
+1
+index 0 -> 9
+index 1 -> 8
+index 2 -> 5
+index 3 -> 4
+index 4 -> 0
+index 5 -> 2
+index 6 -> 3
+index 7 -> 6
+
+rev index 7 -> 6
+rev index 6 -> 3
+rev index 5 -> 2
+rev index 4 -> 0
+rev index 3 -> 4
+rev index 2 -> 5
+rev index 1 -> 8
+rev index 0 -> 9
+
+1
+index 0 -> 9
+index 1 -> 5
+index 2 -> 4
+index 3 -> 0
+index 4 -> 2
+index 5 -> 3
+index 6 -> 6
+
+rev index 6 -> 6
+rev index 5 -> 3
+rev index 4 -> 2
+rev index 3 -> 0
+rev index 2 -> 4
+rev index 1 -> 5
+rev index 0 -> 9
+
+1
+index 0 -> 9
+index 1 -> 5
+index 2 -> 0
+index 3 -> 2
+index 4 -> 3
+index 5 -> 6
+
+rev index 5 -> 6
+rev index 4 -> 3
+rev index 3 -> 2
+rev index 2 -> 0
+rev index 1 -> 5
+rev index 0 -> 9
+
+index 0 -> 123
+
