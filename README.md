@@ -25,5 +25,5 @@
 
 ## contribution & feedback
 [nadarm](https://github.com/nadarm)
-[365kim](https://github.com/365kim)
+, [365kim](https://github.com/365kim)
 
