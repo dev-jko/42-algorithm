@@ -1,6 +1,6 @@
 typedef struct	s_node
 {
-	int		data;
+	void		*data;
 	struct s_node	*prev;
 	struct s_node	*next;
 }		t_node;
