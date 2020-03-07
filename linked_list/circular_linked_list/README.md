@@ -9,6 +9,7 @@
 	1. head가 가리키는 노드가 삭제될 때(해당 노드의 next가 head가 됩니다.)
 	1. head를 이동하는 함수 list_move_head_to_next를 사용할 때
 	1. head를 이동하는 함수 list_move_head_to_prev를 사용할 때
+- list의 인덱스는 항상 head가 가리키는 노드가 0번 입니다.
 - 아래와 같은 list.h를 사용 합니다.
 	```
 	typedef struct	s_node
