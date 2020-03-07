@@ -55,13 +55,13 @@
 ### list_move_head_to_next
 - list의 head를 head의 next로 옮기는 함수를 작성하세요.
 	```
-	int list_move_head_to_next(t_linked_list *list);
+	void list_move_head_to_next(t_linked_list *list);
 	```
 
 ### list_move_head_to_prev
 - list의 head를 head의 prev로 옮기는 함수를 작성하세요.
 	```
-	int list_move_head_to_prev(t_linked_list *list);
+	void list_move_head_to_prev(t_linked_list *list);
 	```
 
 ### list_get

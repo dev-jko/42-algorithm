@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 20:52:54 by jko               #+#    #+#             */
-/*   Updated: 2020/03/07 23:28:14 by jko              ###   ########.fr       */
+/*   Updated: 2020/03/07 23:43:25 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,9 @@ void list_remove(t_linked_list *list, int n, void (*free_data)(void *));
 void list_clear(t_linked_list *list, void (*free_data)(void *));
 void free_list(t_linked_list *list, void (*free_data)(void *));
 void list_foreach(t_linked_list *list, void (*f)(void *));
+void list_move_head_to_next(t_linked_list *list);
+void list_move_head_to_prev(t_linked_list *list);
+
 
 int main(int argc, char *argv[])
 {
@@ -67,6 +70,15 @@ int		list_size(t_linked_list *list)
 		return (0);
 	return (list->size);
 }
+
+void		list_move_head_to_next(t_linked_list *list)
+{
+}
+
+void		list_move_head_to_prev(t_linked_list *list)
+{
+}
+
 
 static int	calculate_index(unsigned int size, int n)
 {
