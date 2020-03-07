@@ -4,6 +4,11 @@
 
 ## exercise 00
 - allowed functions : malloc, free
+- list의 head가 바뀌는 경우는 4가지 입니다.
+	1. 빈 list에 노드를 추가할 때(list의 size가 0에서 1이 될 때)
+	1. head가 가리키는 노드가 삭제될 때(해당 노드의 next가 head가 됩니다.)
+	1. head를 이동하는 함수 list_move_head_to_next를 사용할 때
+	1. head를 이동하는 함수 list_move_head_to_prev를 사용할 때
 - 아래와 같은 list.h를 사용 합니다.
 	```
 	typedef struct	s_node
@@ -45,6 +50,18 @@
 - 목록에 있는 요소의 개수를 반환하는 함수를 작성하세요.
 	```
 	int list_size(t_linked_list *list);
+	```
+
+### list_move_head_to_next
+- list의 head를 head의 next로 옮기는 함수를 작성하세요.
+	```
+	int list_move_head_to_next(t_linked_list *list);
+	```
+
+### list_move_head_to_prev
+- list의 head를 head의 prev로 옮기는 함수를 작성하세요.
+	```
+	int list_move_head_to_prev(t_linked_list *list);
 	```
 
 ### list_get
