@@ -10,6 +10,10 @@
 	1. head를 이동하는 함수 list_move_head_to_next를 사용할 때
 	1. head를 이동하는 함수 list_move_head_to_prev를 사용할 때
 - list의 인덱스는 항상 head가 가리키는 노드가 0번 입니다.
+- circular linked list에서는 인덱스가 순환합니다.
+	- ex) 사이즈가 5일 때, 0-1-2-3-4-0-1-2-3-4-...
+	- 사이즈가 5이고 인덱스 5번 -> 0 (한바퀴 돌아서 다시 0번으로 옴)
+	- 사이즈가 5이고 인덱스가 -2번 -> 3 (뒤에서 2번째)
 - 아래와 같은 list.h를 사용 합니다.
 	```
 	typedef struct	s_node
@@ -41,7 +45,6 @@
 	
 ### list_add
 - 목록의 n번 인덱스에 data를 갖는 새로운 요소를 생성하는 함수를 작성하세요.
-- n이 목록의 요소의 수보다 클 경우엔 마지막 위치에 생성하세요.
 - 생성된 요소의 인덱스를 반환 합니다.
 	```
 	int list_add(t_linked_list *list, void *data, int n);
