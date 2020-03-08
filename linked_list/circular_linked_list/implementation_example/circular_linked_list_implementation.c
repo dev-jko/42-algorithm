@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 20:52:54 by jko               #+#    #+#             */
-/*   Updated: 2020/03/08 00:06:32 by jko              ###   ########.fr       */
+/*   Updated: 2020/03/08 14:38:50 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,10 @@ t_node		*list_get(t_linked_list *list, int n)
 	if ((n = calculate_index(list->size, n)) < 0)
 		direction = -1;
 	curr = list->head;
-	while (curr && n)
+	while (n)
 	{
 		curr = move_node(curr, n);
-		n += direction;
+		n -= direction;
 	}
 	return (curr);
 }
@@ -161,20 +161,78 @@ int		list_add(t_linked_list *list, void *data, int n)
 
 int		list_find(t_linked_list *list, void* data, int (*cmp)(void *data1, void *data2))
 {
+	t_node		*curr;
+	unsigned int	i;
+
+	if (list == 0 || cmp == 0 || (curr = list->head) == 0)
+		return (-1);
+	i = 0;
+	while (i < list->size)
+	{
+		if (cmp(curr->data, data) == 0)
+			return (i);
+		i++;
+		curr = curr->next;
+	}
+	return (-1);
 }
 
 void		list_remove(t_linked_list *list, int n, void (*free_data)(void *))
 {
+	t_node	*curr;
+
+	if (list == 0 || free_data == 0 || (curr = list_get(list, n)) == 0)
+		return ;
+	if (curr == list->head)
+		list->head = curr->next;
+	curr->prev->next = curr->next;
+	curr->next->prev = curr->prev;
+	list->size--;
+	free_data(curr->data);
+	free(curr);
 }
 
 void		list_clear(t_linked_list *list, void (*free_data)(void *))
 {
+	t_node *curr;
+	t_node *temp;
+
+	if (list == 0 || free_data == 0)
+		return ;
+	curr = list->head;
+	list->head = 0;
+	list->size = 0;
+	while (curr)
+	{
+		temp = curr;
+		curr = curr->next;
+		temp->next = 0;
+		free_data(temp->data);
+		free(temp);
+	}
 }
 
 void		free_list(t_linked_list *list, void (*free_data)(void *))
 {
+	if (list == 0 || free_data == 0)
+		return ;
+	list_clear(list, free_data);
+	free(list);
 }
 
 void		list_foreach(t_linked_list *list, void (*f)(void *))
 {
+	t_node	*curr;
+	int	i;
+
+
+	if (list == 0 || f == 0 || (curr = list->head) == 0)
+		return ;
+	i = 0;
+	while (i < list->size)
+	{
+		f(curr->data);
+		curr = curr->next;
+		i++;
+	}
 }
