@@ -45,7 +45,8 @@
 	
 ### list_add
 - 목록의 n번 인덱스에 data를 갖는 새로운 요소를 생성하는 함수를 작성하세요.
-- 생성된 요소의 인덱스를 반환 합니다.
+- 생성된 요소의 인덱스를 반환 합니다. (0 혹은 양수)
+- 실패 시 -1을 반환 합니다.
 	```
 	int list_add(t_linked_list *list, void *data, int n);
 	```
@@ -70,12 +71,14 @@
 
 ### list_get
 - 목록에서 n번 인덱스의 요소를 반환하는 함수를 작성하세요.
+- 실패 시 널포인터를 반환 합니다.
 	```
 	t_node *list_get(t_linked_list *list, int n);
 	```
 
 ### list_find
-- 목록에서 data의 값이 같은 요소의 인덱스를 반환하는 함수를 작성하세요.
+- 목록에서 data의 값이 같은 요소의 인덱스를 반환하는 함수를 작성하세요. (0 혹은 양수)
+- 실패 시 -1를 반환 합니다.
 - 매개변수로 주어진 cmp 함수는 두 data가 같으면 0, 다르면 1을 반환 합니다.
 	```
 	int list_find(t_linked_list *list, void* data, int (*cmp)(void *data1, void *data2));
