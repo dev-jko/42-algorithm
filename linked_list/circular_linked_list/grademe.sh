@@ -24,7 +24,7 @@ echo "============ check diff ================"
 if [ ! -e $dir/grademe_files/$subject_output ] ; then
 	echo "$subject_output 파일이 없습니다."
 else
-	diff -u user_output $dir/grademe_files/$subject_output
+	diff -u user_output $dir/grademe_files/$subject_output | less
 fi
 
 echo "============ check leaks ==============="
