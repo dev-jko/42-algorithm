@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 17:59:53 by jko               #+#    #+#             */
-/*   Updated: 2020/03/08 18:00:28 by jko              ###   ########.fr       */
+/*   Updated: 2020/03/09 20:17:06 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -148,14 +148,19 @@ int main(void)
 	list_clear(list, free);
 	print_list(list);
 
-	for (int i = 0; i < 30; ++i) {
-		printf("list_add return value = %d, list_size = %d\n", list_add(list, strdup(test_data[index]), test_index[index]), list_size(list));
-		print_list(list);
-		index++;
-	}
 
-	//list_clear(list, free);
+	for (int i = test_data_size / 7 * 3; i < test_data_size / 7 * 4; ++i) {
+		printf("index = %d, list_add return value = %d, list_size = %d\n", test_index[i], list_add(list, strdup(test_data[i]), test_index[i]), list_size(list));
+		print_list(list);
+	}
+	list_clear(list, free);
+
+	for (int i = test_data_size / 7 * 4; i < test_data_size / 7 * 6; ++i) {
+		printf("index = %d, list_add return value = %d, list_size = %d\n", test_index[i], list_add(list, strdup(test_data[i]), test_index[i]), list_size(list));
+		print_list(list);
+	}
 	free_list(list, free);
+
 
 	if (!(list = list_init()))
 	{
@@ -172,7 +177,6 @@ int main(void)
 
 	list_foreach(list, f);	
 	print_list(list);
-	//list_clear(list, free);
 	free_list(list, free);
 
 

@@ -24,7 +24,7 @@ echo "============ check diff ================"
 if [ ! -e $dir/grademe_files/$subject_output ] ; then
 	echo "$subject_output 파일이 없습니다."
 else
-	diff user_output $dir/grademe_files/$subject_output
+	diff -u user_output $dir/grademe_files/$subject_output
 fi
 
 echo "============ check leaks ==============="
@@ -35,11 +35,5 @@ else
 fi
 if [ -e ./a.out ] ; then
 	rm -rf a.out a.out.dSYM
-fi
-if [ -e ./user_output ] ; then
-	rm user_output
-fi
-if [ -e ./leaks_result ] ; then
-	rm leaks_result
 fi
 echo "================ end ==================="

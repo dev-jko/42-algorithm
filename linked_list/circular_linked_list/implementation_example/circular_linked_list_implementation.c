@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 20:52:54 by jko               #+#    #+#             */
-/*   Updated: 2020/03/08 18:10:02 by jko              ###   ########.fr       */
+/*   Updated: 2020/03/09 20:12:13 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -153,7 +153,9 @@ int		list_add(t_linked_list *list, void *data, int n)
 	if ((curr = list_get(list, n)) == 0)
 		return (list_add_last(list, data));
 	if ((n = calculate_index(list->size, n)) < 0)
-		return (insert_next(list, curr, data, list->size - n - 1));
+	{
+		return (insert_next(list, curr, data, list->size + n + 1));
+	}
 	return (insert_prev(list, curr, data, n));
 }
 
