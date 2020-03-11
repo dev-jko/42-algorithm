@@ -54,6 +54,7 @@
 
 ### stack_pop
 - stack에서 가장 위에 있는 요소를 꺼내는 함수를 작성하세요.
+- 반환하는 요소의 next를 널포인터로 바꾼후 반환 합니다.
 	```
 	t_node *stack_pop(t_stack *stack);
 	```
