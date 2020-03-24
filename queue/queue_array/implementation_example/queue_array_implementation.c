@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 16:09:35 by jko               #+#    #+#             */
-/*   Updated: 2020/03/24 16:35:10 by jko              ###   ########.fr       */
+/*   Updated: 2020/03/24 16:48:13 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int	queue_size(t_queue *queue)
 
 int	queue_push(t_queue *queue, void *data)
 {
-	if (!queue || queue_size(queue) >= queue->max_size)
+	if (!queue || (unsigned int)queue_size(queue) >= queue->max_size)
 		return (0);
 	queue->last_index++;
 	queue->data[queue->last_index] = data;
