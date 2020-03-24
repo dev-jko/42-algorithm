@@ -21,18 +21,18 @@
 	```
 	t_queue *queue_init(unsigned int max_size);
 	```
-	
-### queue_push
-- queue의 가장 뒤에 data를 추가하는 함수를 작성하세요.
-- 성공하면 1, 실패하면 0을 반환 합니다.
-	```
-	int queue_push(t_queue *queue, void *data);
-	```
 
 ### queue_size
 - queue에 있는 요소의 개수를 반환하는 함수를 작성하세요.
 	```
 	int queue_size(t_queue *queue);
+	```
+
+### queue_push
+- queue의 가장 뒤에 data를 추가하는 함수를 작성하세요.
+- 성공하면 1, 실패하면 0을 반환 합니다.
+	```
+	int queue_push(t_queue *queue, void *data);
 	```
 
 ### queue_front
