@@ -6,12 +6,12 @@
 1. [linked list](./linked_list)
 1. [stack](./stack)
 1. [queue](./queue)
+1. [deque](./deque)
 
 ↑ 완료
 
 -----------------------
 ↓ 진행 중
-1. [deque](./deque)
 1. [tree](./tree)
 1. priority queue
 1. sort
