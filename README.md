@@ -13,7 +13,6 @@
 -----------------------
 ↓ 진행 중
 1. [tree](./tree)
-1. priority queue
 1. sort
 1. hash
 1. graph
