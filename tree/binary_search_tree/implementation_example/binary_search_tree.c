@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:13:23 by jko               #+#    #+#             */
-/*   Updated: 2020/04/04 21:21:42 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/04 21:51:32 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ t_tree	*tree_init(int (*cmp)(void *, void *))
 		return (0);
 	tree->root = 0;
 	tree->cmp = cmp;
+	tree->size = 0;
 	return (tree);
 }
 
@@ -36,22 +37,84 @@ t_node	*create_elem(void *data)
 	return (node);
 }
 
-int	tree_insert(t_tree *tree, void *data)
+int	tree_size(t_tree *tree)
 {
-	t_node	*new;
-
-	if (!tree || !(new = create_elem(data)))
+	if (!tree)
 		return (0);
-
+	return (tree->size);
 }
 
 t_node	*tree_find(t_tree *tree, void *data_ref)
 {
+	t_node	*curr;
+	int	cmp_result;
 
+	if (!tree)
+		return (0);
+	curr = tree->root;
+	while (curr)
+	{
+		if (!(cmp_result = tree->cmp(data_ref, curr->data)))
+			return (curr);
+		if (cmp_result < 0)
+			curr = curr->left;
+		else
+			curr = curr->right;
+	}
+	return (0);
+}
+
+int	tree_insert(t_tree *tree, void *data)
+{
+	t_node	*new;
+	t_node	*curr;
+	t_node	*prev;
+	int	cmp_result;
+
+	if (!tree)
+		return (0);
+	curr = tree->root;
+	prev = 0;
+	while (curr)
+	{
+		if (!(cmp_result = tree->cmp(data, curr->data)))
+			return (0);
+		prev = curr;
+		if (cmp_result < 0)
+			curr = curr->left;
+		else
+			curr = curr->right;
+	}
+	if (!(new = create_elem(data)))
+		return (0);
+	if (!prev)
+		tree->root = new;
+	else if (cmp_result < 0)
+		prev->left = new;
+	else
+		prev->right = new;
+	return (1);
 }
 
 int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 {
+	t_node	*curr;
+	int	cmp_result;
+
+	if (!tree || !free_data)
+		return (0);
+	curr = tree->root;
+	if (tree->cmp(data_ref, tree->root))
+	while (curr)
+	{
+		if (!(cmp_result = tree->cmp(data_ref, curr->data)))
+		{
+			free_data(curr->data);
+			free(curr);
+
+			return (1);
+		}
+	}
 
 }
 

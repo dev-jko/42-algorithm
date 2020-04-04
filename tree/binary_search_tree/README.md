@@ -18,6 +18,7 @@
 	{
 		t_node	*root;
 		int	(*cmp)(void *, void *);
+		int	size;
 	}		t_tree;
 	```
 
@@ -33,6 +34,12 @@
 - t_node형 새로운 요소를 생성하는 함수를 작성하세요.
 	```
 	t_node *create_elem(void *data);
+	```
+
+### tree_size
+- tree에 존재하는 요소의 갯수를 반환하는 함수를 작성하세요.
+	```
+	int	tree_size(t_tree *tree);
 	```
 
 ### tree_find
@@ -55,6 +62,7 @@
 - tree에서 data_ref와 같은 data를 가진 요소를 삭제하는 함수를 작성하세요.
 - 요소의 데이터는 free_data를 사용해서 메모리 할당을 해제해야 합니다.
 - 성공하면 1, 실패하면 0을 반환 합니다.
+- data_ref와 같은 data를 가진 요소가 없다면 실패 합니다.
 	```
 	int tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *));
 	```
