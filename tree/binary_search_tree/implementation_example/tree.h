@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:11:12 by jko               #+#    #+#             */
-/*   Updated: 2020/04/04 21:50:29 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/04 23:09:48 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_node
 {
 	void		*data;
+	struct s_node	*parent;
 	struct s_node	*left;
 	struct s_node	*right;
 }		t_node;
