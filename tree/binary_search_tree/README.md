@@ -34,7 +34,14 @@
 	```
 	t_node *create_elem(void *data);
 	```
-	
+
+### tree_find
+- tree에 data_ref와 같은 data를 갖는 요소를 찾아 반환하는 함수를 작성하세요.
+- 같은 요소가 없다면 널 포인터를 반환 합니다.
+	```
+	t_node *tree_find(t_tree *tree, void *data_ref);
+	```
+
 ### tree_insert
 - tree에 data를 갖는 새로운 요소를 삽입하는 함수를 작성하세요.
 - node의 data는 left의 data보다 크고 right의 data보다 작아야 합니다.
@@ -42,13 +49,6 @@
 - 이미 같은 data를 가진 요소가 있다면 실패 합니다.
 	```
 	int tree_insert(t_tree *tree, void *data);
-	```
-
-### tree_find
-- tree에 data_ref와 같은 data를 갖는 요소를 찾아 반환하는 함수를 작성하세요.
-- 같은 요소가 없다면 널 포인터를 반환 합니다.
-	```
-	t_node *tree_find(t_tree *tree, void *data_ref);
 	```
 
 ### tree_delete
