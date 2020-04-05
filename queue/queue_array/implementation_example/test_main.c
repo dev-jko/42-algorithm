@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/24 16:36:35 by jko               #+#    #+#             */
-/*   Updated: 2020/03/24 16:48:41 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/05 19:18:55 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ int main(void)
 	
 	free_queue(queue, free);
 
+	queue = 0;
 	system("leaks a.out > leaks_result && cat leaks_result | grep leaked");
 	return (0);
 }

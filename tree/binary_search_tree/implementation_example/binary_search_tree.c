@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:13:23 by jko               #+#    #+#             */
-/*   Updated: 2020/04/05 17:03:56 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/05 19:06:10 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,15 +97,46 @@ int	tree_insert(t_tree *tree, void *data)
 	return (1);
 }
 
-static t_node	*find_next_bigger_parent(t_node *curr)
+static t_node	*change_node(
+		t_node *curr,
+		t_node *prev,
+		int cmp_result,
+		t_node **root)
 {
+	t_node	*temp;
+	t_node	*prev2;
+
+	temp = curr;
+	if (!curr->left && !curr->right)
+		curr = 0;
+	else if (curr->left && curr->right)
+	{
+		prev2 = curr;
+		curr = curr->right;
+		while (curr->left)
+		{
+			prev2 = curr;
+			curr = curr->left;
+		}
+		curr = change_node(curr, prev2, -1, root);
+		curr->left = temp->left;
+		curr->right = temp->right;
+	}
+	else
+		curr = curr->left ? curr->left : curr->right;
+	if (!prev)
+		*root = curr;
+	else if (cmp_result < 0)
+		prev->left = curr;
+	else
+		prev->right = curr;
+	return (temp);
 }
 
 int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 {
 	t_node	*prev;
 	t_node	*curr;
-	t_node	*temp;
 	int	cmp_result;
 
 	if (!tree || !free_data || tree_size(tree) == 0)
@@ -114,8 +145,9 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	prev = 0;
 	while (curr)
 	{
-		if ((cmp_result = tree->cmp(data_ref, curr->data)))
+		if (!(cmp_result = tree->cmp(data_ref, curr->data)))
 			break ;
+		prev = curr;
 		if (cmp_result < 0)
 			curr = curr->left;
 		else
@@ -123,29 +155,9 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	}
 	if (!curr)
 		return (0);
-	if (!prev)
-		tree->root = 0;
-	temp = curr;
-
-	if (!curr->left && !curr->right)
-		curr = 0;
-	else if (curr->left && curr->right)
-	{
-		curr = curr->right
-		while (curr->left && curr->right)
-		{
-
-		}
-	}
-	else
-		curr = curr->left ? curr->left : curr->right;
-
-	if (cmp_result < 0)
-		prev->left = curr;
-	else
-		prev->right = curr;
-	free_data(temp->data);
-	free(temp);
+	curr = change_node(curr, prev, cmp_result, &tree->root);
+	free_data(curr->data);
+	free(curr);
 	tree->size--;
 	return (1);
 }

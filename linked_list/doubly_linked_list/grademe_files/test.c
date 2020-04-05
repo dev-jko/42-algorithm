@@ -73,7 +73,7 @@ int main(void)
 
 	free_list(list);
 
-
+	list = 0;
 	system("leaks a.out > leaks_result");
 	return (0);
 }
