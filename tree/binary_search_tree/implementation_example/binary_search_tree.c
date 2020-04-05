@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:13:23 by jko               #+#    #+#             */
-/*   Updated: 2020/04/04 23:42:57 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/05 16:54:24 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ t_node	*create_elem(void *data)
 	if (!node)
 		return (0);
 	node->data = data;
-	node->parent = 0;
 	node->left = 0;
 	node->right = 0;
 	return (node);
@@ -94,8 +93,6 @@ int	tree_insert(t_tree *tree, void *data)
 		prev->left = new;
 	else
 		prev->right = new;
-	if (prev)
-		new->parent = prev;
 	tree->size++;
 	return (1);
 }

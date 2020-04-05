@@ -10,7 +10,6 @@
 	typedef struct	s_node
 	{
 		void		*data;
-		struct s_node	*parent;
 		struct s_node	*left;
 		struct s_node	*right;
 	}		t_node;
