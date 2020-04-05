@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:13:23 by jko               #+#    #+#             */
-/*   Updated: 2020/04/05 19:06:10 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/05 20:09:11 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,11 +97,7 @@ int	tree_insert(t_tree *tree, void *data)
 	return (1);
 }
 
-static t_node	*change_node(
-		t_node *curr,
-		t_node *prev,
-		int cmp_result,
-		t_node **root)
+static t_node	*change_node(t_node *curr, t_node *prev, t_tree *tree)
 {
 	t_node	*temp;
 	t_node	*prev2;
@@ -118,15 +114,21 @@ static t_node	*change_node(
 			prev2 = curr;
 			curr = curr->left;
 		}
-		curr = change_node(curr, prev2, -1, root);
+		curr = change_node(curr, prev2, tree);
 		curr->left = temp->left;
 		curr->right = temp->right;
 	}
 	else
 		curr = curr->left ? curr->left : curr->right;
+/*	
+	if (temp->left)
+		curr->left = temp->left;
+	if (temp->right)
+		curr->right = temp->right;
+*/
 	if (!prev)
-		*root = curr;
-	else if (cmp_result < 0)
+		tree->root = curr;
+	else if (tree->cmp(prev->data, curr->data) > 0)
 		prev->left = curr;
 	else
 		prev->right = curr;
@@ -155,7 +157,7 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	}
 	if (!curr)
 		return (0);
-	curr = change_node(curr, prev, cmp_result, &tree->root);
+	curr = change_node(curr, prev, tree);
 	free_data(curr->data);
 	free(curr);
 	tree->size--;
