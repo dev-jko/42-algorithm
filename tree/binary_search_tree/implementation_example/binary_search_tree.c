@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/04 21:13:23 by jko               #+#    #+#             */
-/*   Updated: 2020/04/05 16:54:24 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/05 17:03:56 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ static t_node	*find_next_bigger_parent(t_node *curr)
 
 int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 {
-	t_node	*parent;
+	t_node	*prev;
 	t_node	*curr;
 	t_node	*temp;
 	int	cmp_result;
@@ -111,6 +111,7 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	if (!tree || !free_data || tree_size(tree) == 0)
 		return (0);
 	curr = tree->root;
+	prev = 0;
 	while (curr)
 	{
 		if ((cmp_result = tree->cmp(data_ref, curr->data)))
@@ -122,7 +123,7 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	}
 	if (!curr)
 		return (0);
-	if (!curr->parent)
+	if (!prev)
 		tree->root = 0;
 	temp = curr;
 
@@ -149,7 +150,20 @@ int	tree_delete(t_tree *tree, void *data_ref, void (*free_data)(void *))
 	return (1);
 }
 
+static void	free_tree_node(t_node *node, void (*free_data)(void *))
+{
+	if (!node || !free_data)
+		return ;
+	free_data(node->data);
+	free_tree_node(node->left, free_data);
+	free_tree_node(node->right, free_data);
+	free(node);
+}
+
 void	free_tree(t_tree *tree, void (*free_data)(void *))
 {
-
+	if (!tree || !free_data)
+		return ;
+	free_tree_node(tree->root, free_data);
+	free(tree);
 }
