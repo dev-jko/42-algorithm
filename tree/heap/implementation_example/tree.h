@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 15:38:49 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 15:42:22 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/09 16:05:52 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 typedef struct	s_heap
 {
 	unsigned int	max_size;
+	unsigned int	size;
 	int				(*cmp)(void *, void *);
 	void			**data;
 }				t_heap;
