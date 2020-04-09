@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 01:05:16 by jko               #+#    #+#             */
-/*   Updated: 2020/03/12 01:13:06 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/09 17:35:00 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_stack	*stack_init(void);
 t_node	*create_elem(void *data);
 int	stack_push(t_stack *stack, void *data);
 int	stack_size(t_stack *stack);
-t_node	*stack_peek(t_stack *stack);
+t_node	*stack_peak(t_stack *stack);
 t_node	*stack_pop(t_stack *stack);
 void	stack_clear(t_stack *stack, void (*free_data)(void *));
 void	free_stack(t_stack *stack, void (*free_data)(void *));

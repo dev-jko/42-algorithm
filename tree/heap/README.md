@@ -32,10 +32,10 @@
 	int heap_insert(t_heap *heap, void *data);
 	```
 
-### heap_peek
+### heap_peak
 - heap의 root에 있는 data를 반환하는 함수를 작성하세요.
 	```
-	void *heap_peek(t_heap *heap);
+	void *heap_peak(t_heap *heap);
 	```
 
 ### heap_pop
