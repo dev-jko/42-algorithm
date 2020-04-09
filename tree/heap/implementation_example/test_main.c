@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 17:19:10 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 17:29:42 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/09 18:18:07 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,11 @@ int cmp(void *a, void *b)
 		return (*(int *)a - *(int *)b);
 }
 
+void free_data(void *a)
+{
+		printf("free %d\n", *(int *)a);
+}
+
 int main(void)
 {
 	int nums[101];
@@ -38,71 +43,101 @@ int main(void)
 
 	t_heap *heap = heap_init(10, cmp);
 	printf("size = %d\n", heap->size);
-	printf("");
-	
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
 
-	printf("\n--- insert ---------------------------------\n");
+	printf("\n--- push ---------------------------------\n");
 
-	heap_insert(heap, &nums[50]);
+	heap_push(heap, &nums[50]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[1]);
+	heap_push(heap, &nums[1]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[32]);
+	heap_push(heap, &nums[32]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[63]);
+	heap_push(heap, &nums[63]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[51]);
+	heap_push(heap, &nums[51]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[14]);
+	heap_push(heap, &nums[14]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[92]);
+	heap_push(heap, &nums[92]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_insert(heap, &nums[3]);
+	heap_push(heap, &nums[3]);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
 
-	printf("\n--- delete ---------------------------------\n");
+	printf("\n--- pop ---------------------------------\n");
 
-	heap_delete(heap, &nums[63], free_data);
+	printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_delete(heap, &nums[50], free_data);
+	printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_delete(heap, &nums[92], free_data);
+	printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_delete(heap, &nums[51], free_data);
+	printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
 
-	heap_delete(heap, &nums[14], free_data);
+	printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
 	printf("size = %d\n", heap->size);
+	printf("peak = %d\n", heap_peak(heap) ? *(int *)heap_peak(heap) : -1);
 	print_heap(heap);
-
-
 
 	free_heap(heap, free_data);
+
+
+
+
+
+
+	heap = heap_init(50, cmp);
+	for (int i = 0; i < 60; ++i) {
+			heap_push(heap, &nums[i]);
+			printf("size = %d\n", heap->size);
+	}
+	print_heap(heap);
+
+	for (int i = 0; i < 60; ++i) {
+			printf("pop = %d\n", heap_peak(heap) ? *(int *)heap_pop(heap) : -1);
+	}
+	print_heap(heap);
+
+	free_heap(heap, free_data);
+	
 
 	heap = 0;
 	system("leaks a.out > leaks_result && cat leaks_result | grep leaked");

@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 15:38:49 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 17:41:06 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/09 17:46:37 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct	s_heap
 }				t_heap;
 
 t_heap	*heap_init(unsigned int max_size, int (*cmp)(void *, void *));
-int		heap_insert(t_heap *heap, void *data);
+int		heap_push(t_heap *heap, void *data);
 void	*heap_peak(t_heap *heap);
 void	*heap_pop(t_heap *heap);
 void	free_heap(t_heap *heap, void (*free_data)(void *));

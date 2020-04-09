@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 15:49:29 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 17:41:20 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/09 18:15:56 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,14 +31,15 @@ t_heap	*heap_init(unsigned int max_size, int (*cmp)(void *, void *))
 		return (heap);
 }
 
-int		heap_insert(t_heap *heap, void *data)
+int		heap_push(t_heap *heap, void *data)
 {
 		unsigned int	i;
 		void			*temp;
 
-		if (!heap || heap->size <= heap->max_size)
+		if (!heap || heap->size >= heap->max_size)
 				return (0);
-		i = ++(heap->size);
+		heap->size++;
+		i = heap->size;
 		heap->data[i] = data;
 		while (i / 2 > 0 && heap->data[i / 2] > heap->data[i])
 		{
@@ -68,25 +69,25 @@ void	*heap_pop(t_heap *heap)
 		if (!heap || heap->size < 1)
 				return (0);
 		result = heap->data[1];
-		heap->data[1] = heap->data[heap->size];
-		heap->size--;
-		i = 1;
-		while ((j = (i * 2 <= heap->size &&
-						heap->data[i] > heap->data[i * 2]))
-				|| (k = i * 2 + 1 <= heap->size &&
-						heap->data[i] > heap->data[i * 2 + 1]))
+		heap->data[1] = heap->data[heap->size--];
+		j = 1;
+		while ((i = j))
 		{
+				j = i * 2 <= heap->size && heap->data[i] > heap->data[i * 2];
+				k = i * 2 + 1 <= heap->size
+						&& heap->data[i] > heap->data[i * 2 + 1];
 				if (j && k)
 						j = heap->data[i * 2] < heap->data[i * 2 + 1]
 								? i * 2 : i * 2 + 1;
 				else if (j)
 						j = i * 2;
-				else
+				else if (k)
 						j = i * 2 + 1;
+				else
+						break;
 				temp = heap->data[i];
 				heap->data[i] = heap->data[j];
 				heap->data[j] = temp;
-				i = j;
 		}
 		return (result);
 }
