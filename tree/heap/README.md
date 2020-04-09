@@ -10,9 +10,9 @@
 	typedef struct	s_heap
 	{
 		unsigned int	max_size;
-		int		(*cmp)(void *, void *);
-		void		**data;
-	}		t_heap;
+		int				(*cmp)(void *, void *);
+		void			**data;
+	}				t_heap;
 	```
 
 ### heap_init
@@ -25,7 +25,7 @@
 
 ### heap_push
 - heap에 data를 삽입하는 함수를 작성하세요.
-- data는 부모의 data보다 크거나 같아야 합니다.
+- data는 부모의 data보다 크거나 같아야 합니다.(min heap)
 - 성공하면 1, 실패하면 0을 반환 합니다.
 	```
 	int heap_insert(t_heap *heap, void *data);

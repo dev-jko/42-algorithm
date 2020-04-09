@@ -61,7 +61,7 @@
 ### tree_delete
 - tree에서 data_ref와 같은 data를 가진 요소를 삭제하는 함수를 작성하세요.
 - 요소의 데이터는 free_data를 사용해서 메모리 할당을 해제해야 합니다.
-- 삭제하는 node의 child가 여러개라면 node의 data보다 큰 것들 중 가장 작은 data를 가진 child node를 끌어 올립니다.
+- 삭제하는 node의 child가 2개라면 node의 data보다 큰 것들 중 가장 작은 data를 가진 child node를 끌어 올립니다.
 - 성공하면 1, 실패하면 0을 반환 합니다.
 - data_ref와 같은 data를 가진 요소가 없다면 실패 합니다.
 	```
