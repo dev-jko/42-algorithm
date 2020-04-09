@@ -10,20 +10,20 @@
 	typedef struct	s_node
 	{
 		struct	s_node	next[26];
-		int		finish;
-	}		t_node;
+		int				finish;
+	}				t_node;
 
 	typedef struct	s_trie
 	{
 		t_node	*root[26];
-	}		t_trie;
+	}				t_trie;
 	```
 
 ### trie_init
 - t_trie형 struct를 반환 하는 함수를 작성하세요.
 - 반환되는 t_trie는 메모리 할당과 초기화를 거쳐야합니다.
 	```
-	t_trie *trie_init(void);
+	t_trie	*trie_init(void);
 	```
 
 ### trie_insert
@@ -31,7 +31,7 @@
 - str은 a ~ z만으로 이루어진 문자열 입니다.
 - 성공하면 1, 실패하면 0을 반환 합니다.
 	```
-	int trie_insert(t_trie *trie, char *str);
+	int	trie_insert(t_trie *trie, char *str);
 	```
 
 ### trie_find
@@ -39,13 +39,13 @@
 - str은 a ~ z만으로 이루어진 문자열 입니다.
 - str이 존재하면 1, 없으면 0을 반환 합니다.
 	```
-	int trie_find(t_trie *trie, char *str);
+	int	trie_find(t_trie *trie, char *str);
 	```
 
 ### free_trie
 - trie에 있는 요소 전체를 삭제하고 trie의 메모리 할당을 해제하는 함수를 작성하세요.
 	```
-	void free_trie(t_trie *trie);
+	void	free_trie(t_trie *trie);
 	```
 
 
