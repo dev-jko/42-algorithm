@@ -1,6 +1,6 @@
 # 42-algorithm
 
-- 오타, 추가, 수정 PR & Feedback 무조건 환영합니다
+- 오타, 추가, 수정 Issue & PR & Feedback 무조건 환영합니다
 
 ## index
 1. [linked list](./linked_list)
@@ -17,8 +17,15 @@
 1. hash
 1. graph
 	1. 최소신장트리
+		- 크루스칼
+		- 프림
 	1. 최단거리 알고리즘
 		- 다익스트라
+		- 벨만-포드
+		- 플로이드-워셜
+1. 완전탐색(DFS, BFS), DP, 탐욕법
+1. 분할 정복, 이분 탐색
+1. KMP
 
 
 ## coding convention
