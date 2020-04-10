@@ -6,11 +6,11 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 15:49:29 by jko               #+#    #+#             */
-/*   Updated: 2020/04/10 23:33:50 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/10 23:39:05 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tree.h"
+#include "heap.h"
 
 t_heap	*heap_init(unsigned int max_size, int (*cmp)(void *, void *))
 {
@@ -51,7 +51,7 @@ int		heap_push(t_heap *heap, void *data)
 		return (1);
 }
 
-void	*heap_peak(t_heap *heap)
+void	*heap_peek(t_heap *heap)
 {
 		if (!heap || heap->size < 1)
 				return (0);
