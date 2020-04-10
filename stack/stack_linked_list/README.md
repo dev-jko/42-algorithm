@@ -46,10 +46,10 @@
 	int stack_size(t_stack *stack);
 	```
 
-### stack_peak
+### stack_peek
 - stack에서 가장 위에 있는 요소를 반환하는 함수를 작성하세요.
 	```
-	t_node *stack_peak(t_stack *stack);
+	t_node *stack_peek(t_stack *stack);
 	```
 
 ### stack_pop

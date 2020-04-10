@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 01:05:04 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 17:35:13 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/10 23:47:18 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	stack_size(t_stack *stack)
 	return (stack->size);
 }
 
-t_node	*stack_peak(t_stack *stack)
+t_node	*stack_peek(t_stack *stack)
 {
 	if (stack == 0)
 		return (0);
