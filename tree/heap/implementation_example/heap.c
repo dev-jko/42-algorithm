@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 15:49:29 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 18:15:56 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/10 23:33:50 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		heap_push(t_heap *heap, void *data)
 		heap->size++;
 		i = heap->size;
 		heap->data[i] = data;
-		while (i / 2 > 0 && heap->data[i / 2] > heap->data[i])
+		while (i / 2 > 0 && heap->cmp(heap->data[i / 2], heap->data[i]) > 0)
 		{
 				temp = heap->data[i / 2];
 				heap->data[i / 2] = heap->data[i];
@@ -73,9 +73,9 @@ void	*heap_pop(t_heap *heap)
 		j = 1;
 		while ((i = j))
 		{
-				j = i * 2 <= heap->size && heap->data[i] > heap->data[i * 2];
+				j = i * 2 <= heap->size && heap->cmp(heap->data[i], heap->data[i * 2]) > 0;
 				k = i * 2 + 1 <= heap->size
-						&& heap->data[i] > heap->data[i * 2 + 1];
+						&& heap->cmp(heap->data[i], heap->data[i * 2 + 1]) > 0;
 				if (j && k)
 						j = heap->data[i * 2] < heap->data[i * 2 + 1]
 								? i * 2 : i * 2 + 1;

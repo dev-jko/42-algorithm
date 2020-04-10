@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/09 17:19:10 by jko               #+#    #+#             */
-/*   Updated: 2020/04/09 18:18:07 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/10 23:32:26 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 void print_heap(t_heap *heap)
 {
-		for (int i = 1; i <= heap->size; ++i) {
-				printf("%d -> %d\n", i, *(int *)heap->data[i]);
+		for (unsigned int i = 1; i <= heap->size; ++i) {
+				printf("%u -> %d\n", i, *(int *)heap->data[i]);
 		}
 		printf("\n");
 }
@@ -127,7 +127,7 @@ int main(void)
 	heap = heap_init(50, cmp);
 	for (int i = 0; i < 60; ++i) {
 			heap_push(heap, &nums[i]);
-			printf("size = %d\n", heap->size);
+			printf("size = %u\n", heap->size);
 	}
 	print_heap(heap);
 
