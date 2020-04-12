@@ -6,138 +6,79 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 16:21:01 by jko               #+#    #+#             */
-/*   Updated: 2020/04/12 16:21:04 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/12 20:44:42 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "trie.h"
 #include <stdio.h>
 
+static void	print_str(t_node *node, char buf[4096], int index)
+{
+	if (!node)
+		return ;
+	if (node->finish)
+	{
+		buf[index] = 0;
+		printf("%s\n", buf);
+	}
+	for (int i = 0; i < 26; ++i) {
+		buf[index] = i + 'a';
+		print_str(node->next[i], buf, index + 1);
+	}
+}
+
 void print_trie(t_trie *trie)
 {
-		for (unsigned int i = 1; i <= trie->size; ++i) {
-				printf("%u -> %d\n", i, *(int *)trie->data[i]);
-		}
-		printf("\n");
-}
+	char	buf[4096];
 
-int cmp(void *a, void *b)
-{
-		return (*(int *)a - *(int *)b);
-}
+	for (int i = 0; i < 4096; ++i) {
+		buf[i] = 0;
+	}
 
-void free_data(void *a)
-{
-		printf("free %d\n", *(int *)a);
+	if (!trie)
+	{
+		printf("error\n");
+		return ;
+	}
+	for (int i = 0; i < 26; ++i) {
+		buf[0] = i + 'a';
+		print_str((*trie)[i], buf, 1);
+	}
 }
 
 int main(void)
 {
-	int nums[101];
-	for (int i = 0; i < 101; ++i) {
-		nums[i] = i;
+	char *strs[100] = {
+		"abc",
+		"z",
+		"abz",
+		"bb",
+		"f",
+		"qwertyuiopasdfghjklzxcvbnm"
+		"zzzz",
+		"wnoane",
+		"",
+		"acccc",
+		0
+	};
+
+	t_trie *trie = trie_init();
+	print_trie(trie);
+
+	for (int i = 0; strs[i]; ++i) {
+		printf("insert result = %d\n", trie_insert(trie, strs[i]));
+		print_trie(trie);
+		printf("\n");
+	}
+
+	for (int i = 0; strs[i]; ++i) {
+		printf("%s find result = %d\n", strs[i], trie_find(trie, strs[i]));
+		printf("\n");
 	}
 
 
-	printf("\n--- init ---------------------------------\n");
-
-	t_trie *trie = trie_init(10, cmp);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-
-	printf("\n--- push ---------------------------------\n");
-
-	trie_push(trie, &nums[50]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[1]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[32]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[63]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[51]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[14]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[92]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	trie_push(trie, &nums[3]);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-
-	printf("\n--- pop ---------------------------------\n");
-
-	printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	printf("size = %d\n", trie->size);
-	printf("peek = %d\n", trie_peek(trie) ? *(int *)trie_peek(trie) : -1);
-	print_trie(trie);
-
-	free_trie(trie, free_data);
-
-
-
-
-
-
-	trie = trie_init(50, cmp);
-	for (int i = 0; i < 60; ++i) {
-			trie_push(trie, &nums[i]);
-			printf("size = %u\n", trie->size);
-	}
-	print_trie(trie);
-
-	for (int i = 0; i < 60; ++i) {
-			printf("pop = %d\n", trie_peek(trie) ? *(int *)trie_pop(trie) : -1);
-	}
-	print_trie(trie);
-
-	free_trie(trie, free_data);
-	
+	free_trie(trie);
 
 	trie = 0;
 	system("leaks a.out > leaks_result && cat leaks_result | grep leaked");
