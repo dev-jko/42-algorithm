@@ -1,7 +1,9 @@
+#include <stdbool.h>
+
 typedef struct	s_node
 {
 	struct	s_node	*next[26];
-	int				finish;
+	bool			finish;
 }				t_node;
 
 typedef struct	s_trie

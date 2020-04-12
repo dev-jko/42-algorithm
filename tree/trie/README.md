@@ -7,10 +7,12 @@
 - trie을 구현 합니다.
 - 아래와 같은 trie.h를 사용 합니다.
 	```
+	#include <stdbool.h>
+
 	typedef struct	s_node
 	{
 		struct	s_node	next[26];
-		int				finish;
+		bool			finish;
 	}				t_node;
 
 	typedef struct	s_trie
@@ -29,17 +31,17 @@
 ### trie_insert
 - trie에 문자열 str을 삽입하는 함수를 작성하세요.
 - str은 a ~ z만으로 이루어진 문자열 입니다.
-- 성공하면 1, 실패하면 0을 반환 합니다.
+- 성공하면 true, 실패하면 false를 반환 합니다.
 	```
-	int	trie_insert(t_trie *trie, char *str);
+	bool	trie_insert(t_trie *trie, char *str);
 	```
 
 ### trie_find
 - trie에서 문자열 str이 있는지 검색하는 함수를 작성하세요.
 - str은 a ~ z만으로 이루어진 문자열 입니다.
-- str이 존재하면 1, 없으면 0을 반환 합니다.
+- str이 존재하면 true, 없으면 false를 반환 합니다.
 	```
-	int	trie_find(t_trie *trie, char *str);
+	bool	trie_find(t_trie *trie, char *str);
 	```
 
 ### free_trie

@@ -2,17 +2,13 @@
 
 - 자료구조와 알고리즘을 공부하는 저장소 입니다!
 - 오타, 추가, 수정 Issue & PR & Feedback 무조건 환영합니다!
+- 질문은 Issue로 올려주시면 최대한 답변해드릴께요 :)
 
 ## index
 1. [linked list](./linked_list)
 1. [stack](./stack)
 1. [queue](./queue)
 1. [deque](./deque)
-
-↑ 완료
-
------------------------
-↓ 진행 중
 1. [tree](./tree)
 1. sort
 1. hash
