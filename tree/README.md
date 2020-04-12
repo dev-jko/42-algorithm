@@ -21,6 +21,9 @@ tree를 사용해 풀어봅시다.
 - [14425번 문자열 집합](https://www.acmicpc.net/problem/14425)
 - [4258번 생태학](https://www.acmicpc.net/problem/4358)
 - [5052번 전화번호 목록](https://www.acmicpc.net/problem/5052)
+- [1717번 집합의 표현](https://www.acmicpc.net/problem/1717)
+- [4195번 친구 네트워크](https://www.acmicpc.net/problem/4195)
+
 
 ## 생각해보기
 - tree가 사용되는 상황
