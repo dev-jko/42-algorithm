@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 16:21:01 by jko               #+#    #+#             */
-/*   Updated: 2020/04/13 17:48:22 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/13 17:55:07 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,32 +34,38 @@ int main(void)
 	print_nodes(nodes);
 
 	printf("1, 2 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
-	union_func(nodes[1], nodes[2]);
+	printf("union result root = %d\n", *(int *)union_func(nodes[1], nodes[2])->data);
 	printf("1, 2 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
 	print_nodes(nodes);
 
-	union_func(nodes[3], nodes[4]);
-	printf("3, 4 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("3, 4 is disjoint = %d\n", is_disjoint(nodes[3], nodes[4]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[3], nodes[4])->data);
+	printf("3, 4 is disjoint = %d\n", is_disjoint(nodes[3], nodes[4]));
 	print_nodes(nodes);
 	
-	union_func(nodes[4], nodes[1]);
-	printf("4, 1 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("4, 1 is disjoint = %d\n", is_disjoint(nodes[4], nodes[1]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[4], nodes[1])->data);
+	printf("4, 1 is disjoint = %d\n", is_disjoint(nodes[4], nodes[1]));
 	print_nodes(nodes);
 
-	union_func(nodes[5], nodes[15]);
-	printf("5, 15 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("5, 15 is disjoint = %d\n", is_disjoint(nodes[5], nodes[15]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[5], nodes[15])->data);
+	printf("5, 15 is disjoint = %d\n", is_disjoint(nodes[5], nodes[15]));
 	print_nodes(nodes);
 
-	union_func(nodes[8], nodes[4]);
-	printf("8, 4 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("8, 4 is disjoint = %d\n", is_disjoint(nodes[8], nodes[4]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[8], nodes[4])->data);
+	printf("8, 4 is disjoint = %d\n", is_disjoint(nodes[8], nodes[4]));
 	print_nodes(nodes);
 	
-	union_func(nodes[8], nodes[15]);
-	printf("8, 15 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("8, 15 is disjoint = %d\n", is_disjoint(nodes[8], nodes[15]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[8], nodes[15])->data);
+	printf("8, 15 is disjoint = %d\n", is_disjoint(nodes[8], nodes[15]));
 	print_nodes(nodes);
 	
-	union_func(nodes[18], nodes[11]);
-	printf("18, 11 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	printf("18, 11 is disjoint = %d\n", is_disjoint(nodes[18], nodes[11]));
+	printf("union result root = %d\n", *(int *)union_func(nodes[18], nodes[11])->data);
+	printf("18, 11 is disjoint = %d\n", is_disjoint(nodes[18], nodes[11]));
 	print_nodes(nodes);
 
 
