@@ -6,81 +6,67 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 16:21:01 by jko               #+#    #+#             */
-/*   Updated: 2020/04/12 20:44:42 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/13 17:48:22 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "trie.h"
+#include "union_find.h"
 #include <stdio.h>
 
-static void	print_str(t_node *node, char buf[4096], int index)
+void print_nodes(t_node *nodes[20])
 {
-	if (!node)
-		return ;
-	if (node->finish)
-	{
-		buf[index] = 0;
-		printf("%s\n", buf);
+	for (int i = 0; i < 20; ++i) {
+		printf("index[%02d] parent = %2d\n", i, *(int *)find(nodes[i])->data);
 	}
-	for (int i = 0; i < 26; ++i) {
-		buf[index] = i + 'a';
-		print_str(node->next[i], buf, index + 1);
-	}
-}
-
-void print_trie(t_trie *trie)
-{
-	char	buf[4096];
-
-	for (int i = 0; i < 4096; ++i) {
-		buf[i] = 0;
-	}
-
-	if (!trie)
-	{
-		printf("error\n");
-		return ;
-	}
-	for (int i = 0; i < 26; ++i) {
-		buf[0] = i + 'a';
-		print_str((*trie)[i], buf, 1);
-	}
+	printf("\n");
 }
 
 int main(void)
 {
-	char *strs[100] = {
-		"abc",
-		"z",
-		"abz",
-		"bb",
-		"f",
-		"qwertyuiopasdfghjklzxcvbnm"
-		"zzzz",
-		"wnoane",
-		"",
-		"acccc",
-		0
-	};
+	int		data[20];
+	t_node	*nodes[20];
 
-	t_trie *trie = trie_init();
-	print_trie(trie);
-
-	for (int i = 0; strs[i]; ++i) {
-		printf("insert result = %d\n", trie_insert(trie, strs[i]));
-		print_trie(trie);
-		printf("\n");
+	for (int i = 0; i < 20; ++i) {
+		data[i] = i;
+		nodes[i] = create_elem(&data[i]);
 	}
 
-	for (int i = 0; strs[i]; ++i) {
-		printf("%s find result = %d\n", strs[i], trie_find(trie, strs[i]));
-		printf("\n");
+	print_nodes(nodes);
+
+	printf("1, 2 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	union_func(nodes[1], nodes[2]);
+	printf("1, 2 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+
+	union_func(nodes[3], nodes[4]);
+	printf("3, 4 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+	
+	union_func(nodes[4], nodes[1]);
+	printf("4, 1 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+
+	union_func(nodes[5], nodes[15]);
+	printf("5, 15 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+
+	union_func(nodes[8], nodes[4]);
+	printf("8, 4 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+	
+	union_func(nodes[8], nodes[15]);
+	printf("8, 15 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+	
+	union_func(nodes[18], nodes[11]);
+	printf("18, 11 is disjoint = %d\n", is_disjoint(nodes[1], nodes[2]));
+	print_nodes(nodes);
+
+
+	for (int i = 0; i < 20; ++i) {
+		free(nodes[i]);
 	}
 
-
-	free_trie(trie);
-
-	trie = 0;
 	system("leaks a.out > leaks_result && cat leaks_result | grep leaked");
 
 	return (0);

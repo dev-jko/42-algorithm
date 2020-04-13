@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/12 22:05:26 by jko               #+#    #+#             */
-/*   Updated: 2020/04/13 17:15:44 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/13 17:45:09 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ bool	is_disjoint(t_node *node1, t_node *node2)
 {
 	if (!node1 || !node2)
 		return (false);
-	return (find(node1) == find(node2));
+	return (!(find(node1) == find(node2)));
 }
 
 t_node	*union_func(t_node *node1, t_node *node2)
