@@ -11,11 +11,16 @@
 1. [생각해보기](#생각해보기)
 
 ## baekjoon
-tree를 사용해 풀어봅시다.
-- [1920번 수 찾기](https://www.acmicpc.net/problem/1920)
-- [번 ](https://www.acmicpc.net/problem/)
+sort를 사용해 풀어봅시다.
+- [2750번 수 정렬하기](https://www.acmicpc.net/problem/2750)
+- [2751번 수 정렬하기2](https://www.acmicpc.net/problem/2751)
+- [10989번 수 정렬하기3](https://www.acmicpc.net/problem/10989)
+- [1427번 소트인사이드](https://www.acmicpc.net/problem/1427)
+- [1181번 단어 정렬](https://www.acmicpc.net/problem/1181)
+- [10814번 나이순 정렬](https://www.acmicpc.net/problem/10814)
 
 ## 생각해보기
+- radix sort, counting sort란?
 - 어떤 정렬 알고리즘이 가장 빠를까?(시간 복잡도)
 - stable sort, unstable sort란?
 
