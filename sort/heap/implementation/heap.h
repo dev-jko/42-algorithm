@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/09 15:38:49 by jko               #+#    #+#             */
-/*   Updated: 2020/04/14 17:04:56 by jko              ###   ########.fr       */
+/*   Created: 2020/04/14 17:05:32 by jko               #+#    #+#             */
+/*   Updated: 2020/04/14 17:20:27 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,9 @@ typedef struct		s_heap
 	void			**data;
 }					t_heap;
 
-t_heap	*heap_init(unsigned int max_size, int (*cmp)(void *, void *));
-int     heap_push(t_heap *heap, void *data);
-void	*heap_peek(t_heap *heap);
-void	*heap_pop(t_heap *heap);
-void	free_heap(t_heap *heap, void (*free_data)(void *));
+int					heap_sort(
+		void **items,
+		int size,
+		int (*cmp)(void *, void *));
 
 #endif
