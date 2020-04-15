@@ -6,37 +6,40 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:55:48 by jko               #+#    #+#             */
-/*   Updated: 2020/04/16 01:07:04 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/16 01:23:51 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "quick.h"
 
+static void	swap(void **items, int i, int j)
+{
+	void	*temp;
+
+	temp = items[i];
+	items[i] = items[j];
+	items[j] = temp;
+}
+
 static void	quick(void **items, int start, int end, int (*cmp)(void *, void *))
 {
 	int		i;
 	int		j;
-	int		pivot;
-	void	*temp;
 
 	if (start >= end)
 		return ;
-	pivot = start;
+	swap(items, start, (start + end) / 2);
 	i = start;
 	j = end;
 	while (i < j)
 	{
-		while (cmp(items[pivot], items[j]) < 0)
+		while (cmp(items[start], items[j]) < 0)
 			j--;
-		while (i < j && cmp(items[pivot], items[i]) >= 0)
+		while (i < j && cmp(items[start], items[i]) >= 0)
 			i++;
-		temp = items[i];
-		items[i] = items[j];
-		items[j] = temp;
+		swap(items, i, j);
 	}
-	temp = items[pivot];
-	items[pivot] = items[i];
-	items[i] = temp;
+	swap(items, start, i);
 	quick(items, start, i - 1, cmp);
 	quick(items, i + 1, end, cmp);
 }
