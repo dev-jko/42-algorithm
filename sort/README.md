@@ -22,6 +22,7 @@ sort를 사용해 풀어봅시다.
 ## 생각해보기
 - radix sort, counting sort란?
 - 어떤 정렬 알고리즘이 가장 빠를까?(시간 복잡도)
+- quick sort가 최악의 시간복잡도를 가지는 경우는? 그리고 그걸 방지하기 위한 방법은?
 - stable sort, unstable sort란?
 
 
