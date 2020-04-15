@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/14 17:55:48 by jko               #+#    #+#             */
-/*   Updated: 2020/04/15 23:21:16 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/16 01:07:04 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,17 @@ static void	quick(void **items, int start, int end, int (*cmp)(void *, void *))
 	if (start >= end)
 		return ;
 	pivot = start;
-	i = start + 1;
+	i = start;
 	j = end;
 	while (i < j)
 	{
-		while ((i < end) && (cmp(items[pivot], items[i]) > 0))
-			i++;
-		while ((j > start + 1) && (cmp(items[pivot], items[j]) < 0))
+		while (cmp(items[pivot], items[j]) < 0)
 			j--;
-		if (i < j)
-			break ;
+		while (i < j && cmp(items[pivot], items[i]) >= 0)
+			i++;
 		temp = items[i];
 		items[i] = items[j];
 		items[j] = temp;
-		i++;
-		j--;
 	}
 	temp = items[pivot];
 	items[pivot] = items[i];
