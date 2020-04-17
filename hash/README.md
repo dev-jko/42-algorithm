@@ -3,7 +3,7 @@
 [뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
-1. [Rabin-Carp](./rabin_carp)
+1. [Rabin-Karp](./rabin_Karp)
 1. [hash map(table)](./hash_map)
 1. [baekjoon](#baekjoon)
 1. [생각해보기](#생각해보기)
