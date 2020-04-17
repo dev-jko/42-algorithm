@@ -11,7 +11,7 @@
 1. [deque](./deque)
 1. [tree](./tree)
 1. [sort](./sort)
-1. hash
+1. [hash](./hash)
 1. graph - 최소신장트리
 	- 크루스칼
 	- 프림
