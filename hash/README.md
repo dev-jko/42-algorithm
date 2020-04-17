@@ -3,7 +3,7 @@
 [뒤로 가기](https://github.com/nadarm/42-algorithm)
 
 ## index
-1. [Rabin-Karp](./rabin_Karp)
+1. [Rabin-Karp](./rabin_karp)
 1. [hash map(table)](./hash_map)
 1. [baekjoon](#baekjoon)
 1. [생각해보기](#생각해보기)
@@ -16,6 +16,7 @@ hash를 사용해 풀어봅시다.
 - [14425번 문자열 집합](https://www.acmicpc.net/problem/14425)
 - [1764번 듣보잡](https://www.acmicpc.net/problem/1764)
 - [5052번 전화번호 목록](https://www.acmicpc.net/problem/5052)
+- [1786번 찾기](https://www.acmicpc.net/problem/1786)
 
 ## 생각해보기
 - map(table, dictionary), set 자료구조란?
