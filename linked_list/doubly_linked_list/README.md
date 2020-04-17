@@ -18,7 +18,7 @@
 		unsigned int	size;
 		t_node		*head;
 		t_node		*tail;
-	}		t_linekd_list;
+	}		t_linked_list;
 	```
 
 ### list_init
