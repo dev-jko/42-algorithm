@@ -13,15 +13,14 @@
 - 문자열 str의 hash 값을 구하는 함수를 작성하세요.
 - str의 길이와 len 중 작은 값을 길이로 사용합니다.
 	```
-	unsigned int	get_hash_value(const char *str, int len);
+	long long	get_hash_value(const char *str, unsigned int len);
 	```
 
 ### find_str
 - 문자열 haystack에서 문자열 needle을 찾는 함수 find_str을 작성하세요.
-- rabin-karp 알고리즘을 사용하여 구현 합니다.
 - 일치하는 문자열을 찾으면 시작 주소를, 찾지 못하면 null pointer를 반환 합니다.
 	```
-	char	*find_str(const char *haystack, const char *needle);
+	char		*find_str(const char *haystack, const char *needle);
 	```
 
 
