@@ -4,6 +4,7 @@
 
 ## index
 1. [Rabin-Karp](./rabin_karp)
+1. [hash set](./hash_set)
 1. [hash map(table)](./hash_map)
 1. [baekjoon](#baekjoon)
 1. [생각해보기](#생각해보기)
@@ -20,8 +21,8 @@ hash를 사용해 풀어봅시다.
 
 ## 생각해보기
 - map(table, dictionary), set 자료구조란?
-- array, list, map, set 자료구조의 비교(특징, 장단점)
-- hash collision과 그 해결 방법은?
-
+	- hash map, tree map, hash set, tree set 자료구조의 비교
+	- array, list, map, set 자료구조의 비교
+- hash collision과 collision을 줄이는 방법 그리고 collision 발생 시 해결 방법은?
 
 [뒤로 가기](https://github.com/nadarm/42-algorithm)
