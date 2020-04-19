@@ -5,21 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/09 17:19:10 by jko               #+#    #+#             */
-/*   Updated: 2020/04/10 23:39:55 by jko              ###   ########.fr       */
+/*   Created: 2020/04/19 21:49:03 by jko               #+#    #+#             */
+/*   Updated: 2020/04/19 22:16:00 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "heap.h"
+#include "set.h"
 #include <stdio.h>
-
-void print_heap(t_heap *heap)
-{
-		for (unsigned int i = 1; i <= heap->size; ++i) {
-				printf("%u -> %d\n", i, *(int *)heap->data[i]);
-		}
-		printf("\n");
-}
 
 int cmp(void *a, void *b)
 {
@@ -41,105 +33,96 @@ int main(void)
 
 	printf("\n--- init ---------------------------------\n");
 
-	t_heap *heap = heap_init(10, cmp);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	t_hash_set *set = set_init(cmp);
+	printf("size = %d\n", set->size);
 
 
-	printf("\n--- push ---------------------------------\n");
+	printf("\n--- insert ---------------------------------\n");
 
-	heap_push(heap, &nums[50]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[50], set_insert(set, &nums[50], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[50], sizeof(int)));
 
-	heap_push(heap, &nums[1]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[1], set_insert(set, &nums[1], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[1], sizeof(int)));
 
-	heap_push(heap, &nums[32]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[32], set_insert(set, &nums[32], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[32], sizeof(int)));
 
-	heap_push(heap, &nums[63]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[63], set_insert(set, &nums[63], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[63], sizeof(int)));
 
-	heap_push(heap, &nums[51]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[51], set_insert(set, &nums[51], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[51], sizeof(int)));
 
-	heap_push(heap, &nums[14]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[14], set_insert(set, &nums[14], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[14], sizeof(int)));
 
-	heap_push(heap, &nums[92]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[92], set_insert(set, &nums[92], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[92], sizeof(int)));
 
-	heap_push(heap, &nums[3]);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	printf("insert %d = %d\n", nums[3], set_insert(set, &nums[3], sizeof(int)));
+	printf("size = %d\n", set->size);
+	printf("exists = %d\n\n", set_exists(set, &nums[3], sizeof(int)));
 
 
-	printf("\n--- pop ---------------------------------\n");
+	printf("\n--- delete ---------------------------------\n");
 
-	printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	int *t;
 
-	printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	t = &nums[3];
+	printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+	printf("size = %d\n", set->size);
 
-	printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	t = &nums[1];
+	printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+	printf("size = %d\n", set->size);
 
-	printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	t = &nums[51];
+	printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+	printf("size = %d\n", set->size);
 
-	printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
-	printf("size = %d\n", heap->size);
-	printf("peek = %d\n", heap_peek(heap) ? *(int *)heap_peek(heap) : -1);
-	print_heap(heap);
+	t = &nums[92];
+	printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+	printf("size = %d\n", set->size);
 
-	free_heap(heap, free_data);
+	t = &nums[50];
+	printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+	printf("size = %d\n", set->size);
+
+	free_set(set, free_data);
 
 
 
-
-
-
-	heap = heap_init(50, cmp);
+	printf("\n--- test ---------------------------------\n");
+	set = set_init(cmp);
 	for (int i = 0; i < 60; ++i) {
-			heap_push(heap, &nums[i]);
-			printf("size = %u\n", heap->size);
+			printf("insert %d = %d\n", nums[i], set_insert(set, &nums[i], sizeof(int)));
+			printf("insert %d = %d\n", nums[i], set_insert(set, &nums[i], sizeof(int)));
+			printf("size = %u\n", set->size);
 	}
-	print_heap(heap);
-
-	for (int i = 0; i < 60; ++i) {
-			printf("pop = %d\n", heap_peek(heap) ? *(int *)heap_pop(heap) : -1);
+	printf("\n");
+	for (int i = 0; i < 101; ++i) {
+		printf("exists %d = %d\n", nums[i], set_exists(set, &nums[i], sizeof(int)));
 	}
-	print_heap(heap);
+	printf("\n");
+	for (int i = 0; i < 101; ++i) {
+		t = &nums[i];
+		printf("%d -> exists = %d, delete = %d\n", *t, set_exists(set, t, sizeof(int)), set_delete(set, t, sizeof(int), free_data));
+		printf("size = %d\n", set->size);
+	}
 
-	free_heap(heap, free_data);
+	free_set(set, free_data);
 	
 
-	heap = 0;
+
+	set = 0;
 	system("leaks a.out > leaks_result && cat leaks_result | grep leaked");
 
 	return (0);

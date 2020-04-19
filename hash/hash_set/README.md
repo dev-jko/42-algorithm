@@ -35,14 +35,14 @@
 - 삽입에 성공하면 1, 실패하면 0을 반환합니다.
 - 이미 hash set 안에 존재하는 data를 삽입하면 실패합니다.
 	```
-	int set_insert(t_hash_set *hash_set, void *data);
+	int set_insert(t_hash_set *set, void *data, unsigned int data_size);
 	```
 
 ### set_exists
 - hash set 안에 data가 존재하는지 확인하는 함수를 작성하세요.
 - 존재한다면 1, 없다면 0을 반환합니다.
 	```
-	int set_exists(t_hash_set *set, void *data);
+	int set_exists(t_hash_set *set, void *data, unsigned int data_size);
 	```
 
 ### set_delete
@@ -51,7 +51,7 @@
 - hash set 안에 없는 data를 삭제하려 하면 성공으로 간주합니다.
 - data는 free_data를 사용해서 메모리 할당을 해제해야합니다.
 	```
-	int set_delete(t_hash_set *set, void *data, void (*free_data)(void *));
+	int set_delete(t_hash_set *set, void *data, unsigned int data_size, void (*free_data)(void *));
 	```
 
 ### free_set
