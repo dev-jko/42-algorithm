@@ -35,7 +35,7 @@
 - 삽입에 성공하면 1, 실패하면 0을 반환합니다.
 - 이미 hash set 안에 존재하는 data를 삽입하면 실패합니다.
 	```
-	int set_insert(t_hash_map *hash_set, void *data);
+	int set_insert(t_hash_set *hash_set, void *data);
 	```
 
 ### set_exists
