@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/18 14:31:41 by jko               #+#    #+#             */
-/*   Updated: 2020/04/18 20:52:08 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/19 15:41:50 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ long long			get_hash_value(const char *str, unsigned int len)
 	i = 0;
 	while (i < len)
 	{
-		result = result * POWER + str[i];
+		result = (result * POWER + str[i]) % BIG_PRIM;
 		i++;
 	}
 	return (result);
@@ -58,11 +58,15 @@ static char			*find(
 	pow = 1;
 	i = 1;
 	while (i++ < p_len)
-		pow *= POWER;
+		pow = pow * POWER % BIG_PRIM;
 	i = 1;
 	while (i + p_len <= str_len)
 	{
-		hash = POWER * (hash - str[i - 1] * pow) + str[i + p_len - 1];
+		hash = (hash - str[i - 1] * pow) % BIG_PRIM;
+		if (hash < 0)
+			hash += BIG_PRIM;
+		hash = POWER * hash % BIG_PRIM;
+		hash = (hash + str[i + p_len - 1]) % BIG_PRIM;
 		if (hash == pattern)
 			return ((char *)(str + i));
 		i++;
