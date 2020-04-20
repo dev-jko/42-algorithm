@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 20:45:39 by jko               #+#    #+#             */
-/*   Updated: 2020/04/19 22:24:36 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/20 15:36:59 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ t_hash_set		*set_init(int (*cmp)(void *, void *))
 
 	if (!cmp || !(set = malloc(sizeof(t_hash_set))))
 		return (0);
-	if (!(set->set = malloc(sizeof(void *) * BIG_PRIM)))
+	if (!(set->set = malloc(sizeof(t_node *) * BIG_PRIM)))
 	{
 		free(set);
 		return (0);
