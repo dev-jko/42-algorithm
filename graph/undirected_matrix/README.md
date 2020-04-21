@@ -61,7 +61,7 @@
 - `재귀 함수`를 이용해 `DFS`의 `pre-order` traversal을 구현합니다.
 - 순회의 시작은 항상 0번 vertex 입니다.
 - 하나의 vertex는 단 1번만 출력해야합니다.
-- print_data는 data를 출력하는 함수입니다.(마지막에 개행을 포함하지 않습니다.)
+- print_data는 data를 출력하는 함수입니다.(print_data는 마지막에 개행을 포함하고 있지 않습니다.)
 	```
 	void graph_traverse(t_graph *graph, void (*print_data)(void *));
 	```
