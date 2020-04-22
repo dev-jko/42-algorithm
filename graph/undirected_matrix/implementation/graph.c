@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 16:31:43 by jko               #+#    #+#             */
-/*   Updated: 2020/04/21 21:12:45 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/22 15:02:38 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,7 @@ void	free_graph(t_graph *graph, void (*free_data)(void *))
 	{
 		free_data(graph->data[i]);
 		free(graph->matrix[i]);
+		i++;
 	}
 	free(graph->data);
 	free(graph->matrix);
