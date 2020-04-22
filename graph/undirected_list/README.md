@@ -4,7 +4,7 @@
 
 ## exercise 00
 - allowed functions : malloc, free, printf
-- undirected graph를 구현 합니다.
+- adjacency list를 이용하여 undirected graph를 구현 합니다.
 - 아래와 같은 graph.h를 사용 합니다.
 	```
 	#include <stdbool.h>
@@ -78,7 +78,7 @@
 		0번 vertex, data = a
 		1번 vertex, data = b
 		```
-- `stack`을 이용해 `DFS`의 `pre-order` traversal을 구현합니다.
+- `stack`을 이용해 `DFS`을 구현합니다.
 - 순회의 시작은 항상 0번 vertex 입니다.
 - 하나의 vertex는 단 1번만 출력해야합니다.
 - print_data는 data를 출력하는 함수입니다.(print_data는 마지막에 개행을 포함하고 있습니다.)

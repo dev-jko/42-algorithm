@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/04/21 21:15:35 by jko               #+#    #+#             */
-/*   Updated: 2020/04/22 22:41:41 by jko              ###   ########.fr       */
+/*   Created: 2020/04/22 22:05:16 by jko               #+#    #+#             */
+/*   Updated: 2020/04/23 00:49:10 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,23 @@ int main(void)
 	graph_traverse(graph, print_data);
 	printf("\n");
 
-	graph_set_edge(graph, 1, 4, true);
+	graph_set_edge(graph, 3, 4, true);
 	graph_traverse(graph, print_data);
 	printf("\n");
 
-	graph_set_edge(graph, 1, 2, false);
+	graph_set_edge(graph, 1, 0, false);
+	graph_traverse(graph, print_data);
+	printf("\n");
+
+	graph_set_edge(graph, 3, 0, true);
+	graph_traverse(graph, print_data);
+	printf("\n");
+
+	graph_set_edge(graph, 3, 2, false);
+	graph_traverse(graph, print_data);
+	printf("\n");
+
+	graph_set_edge(graph, 2, 4, true);
 	graph_traverse(graph, print_data);
 	printf("\n");
 
@@ -62,25 +74,6 @@ int main(void)
 	printf("1, 4번 edge = %d\n", graph_get_edge(graph, 1, 4));
 	printf("2, 3번 edge = %d\n", graph_get_edge(graph, 2, 3));
 	printf("0, 1번 edge = %d\n\n", graph_get_edge(graph, 0, 1));
-
-	free_graph(graph, free);
-
-
-	graph = make_graph();
-	graph_traverse(graph, print_data);
-	printf("\n");
-
-	graph_set_edge(graph, 1, 0, false);
-	graph_traverse(graph, print_data);
-	printf("\n");
-
-	graph_set_edge(graph, 1, 2, false);
-	graph_traverse(graph, print_data);
-	printf("\n");
-
-	graph_set_edge(graph, 4, 2, true);
-	graph_traverse(graph, print_data);
-	printf("\n");
 
 	free_graph(graph, free);
 
