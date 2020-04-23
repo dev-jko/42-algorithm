@@ -5,7 +5,7 @@
 ## index
 1. [Undirected Graph(adjacency matrix)](./undirected_matrix)
 1. [Undirected Graph(adjacency list)](./undirected_list)
-1. [Directed Graph(adjacency matrix)](./directed_matrix)
+1. [Directed Graph(adjacency list)](./directed_list)
 1. Minimum Spanning Tree(MST, 최소 신장 트리)
 	- Kruskal
 	- Prim
