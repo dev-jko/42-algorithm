@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/08 00:04:33 by jko               #+#    #+#             */
-/*   Updated: 2020/03/08 00:10:52 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/23 12:29:39 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ t_node		*create_elem(void *data);
 int		list_add(t_linked_list *list, void *data, int n);
 int		list_size(t_linked_list *list);
 t_node		*list_get(t_linked_list *list, int n);
-int		list_find(t_linked_list *list, void* data, int (*cmp)(void *data1, void *data2));
+int		list_find(t_linked_list *list, void* data, int (*cmp)(void *, void *));
 void		list_remove(t_linked_list *list, int n, void (*free_data)(void *));
 void		list_clear(t_linked_list *list, void (*free_data)(void *));
 void		free_list(t_linked_list *list, void (*free_data)(void *));

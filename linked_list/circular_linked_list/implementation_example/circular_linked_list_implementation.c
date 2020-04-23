@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/07 20:52:54 by jko               #+#    #+#             */
-/*   Updated: 2020/03/09 20:12:13 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/23 12:30:15 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,7 +159,7 @@ int		list_add(t_linked_list *list, void *data, int n)
 	return (insert_prev(list, curr, data, n));
 }
 
-int		list_find(t_linked_list *list, void* data, int (*cmp)(void *data1, void *data2))
+int		list_find(t_linked_list *list, void* data, int (*cmp)(void *, void *))
 {
 	t_node		*curr;
 	unsigned int	i;
