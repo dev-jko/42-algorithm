@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 17:53:58 by jko               #+#    #+#             */
-/*   Updated: 2020/04/23 20:47:31 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/25 16:29:23 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,9 +134,6 @@ static bool		remove_list(t_node **head, uint vertex)
 	return (true);
 }
 
-/*
- *	현재 코드는 graph_set_edge 함수 실행 중 에러가 발생할 시 처리가 완벽하지 않습니다.
- */
 bool	graph_set_edge(t_graph *graph, uint start, uint end, bool state)
 {
 	t_node	*new;

@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 20:57:47 by jko               #+#    #+#             */
-/*   Updated: 2020/04/22 22:36:04 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/25 16:34:53 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ static bool		add_list(t_node **head, t_node *new)
 	t_node	*prev;
 	t_node	*curr;
 
+	if (!head || !new)
+		return (false);
 	if (*head == 0)
 	{
 		*head = new;
@@ -113,6 +115,8 @@ static bool		remove_list(t_node **head, uint vertex)
 	t_node	*prev;
 	t_node	*curr;
 
+	if (!head)
+		return (false);
 	if (!(*head))
 		return (true);
 	prev = 0;
@@ -134,9 +138,6 @@ static bool		remove_list(t_node **head, uint vertex)
 	return (true);
 }
 
-/*
- *	현재 코드는 graph_set_edge 함수 실행 중 에러가 발생할 시 처리가 완벽하지 않습니다.
- */
 bool	graph_set_edge(t_graph *graph, uint vertex1, uint vertex2, bool state)
 {
 	t_node	*new1;
@@ -154,8 +155,13 @@ bool	graph_set_edge(t_graph *graph, uint vertex1, uint vertex2, bool state)
 		else
 			return (false);
 	}
-	if (!(new1 = create_elem(vertex2)) || !(new2 = create_elem(vertex1)))
+	if (!(new1 = create_elem(vertex2)))
 		return (false);
+	if (!(new2 = create_elem(vertex1)))
+	{
+		free(new1);
+		return (false);
+	}
 	if (!add_list(&(graph->list[vertex1]), new1)
 			|| !add_list(&(graph->list[vertex2]), new2))
 	{
