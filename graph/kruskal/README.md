@@ -5,7 +5,7 @@
 ## exercise 00
 - allowed functions : malloc, free
 - Kruskal 알고리즘을 구현 합니다.
-- 아래와 같은 undirected graph(adjacency list)를 사용합니다.
+- 아래와 같은 weighted undirected graph(adjacency list)를 사용합니다.
 	```
 	typedef unsigned int uint;
 
