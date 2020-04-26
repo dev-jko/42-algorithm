@@ -8,7 +8,7 @@
 1. [Directed Graph(adjacency list)](./directed_list)
 1. Minimum Spanning Tree(MST, 최소 신장 트리)
 	- [Kruskal](./kruskal)
-	- Prim
+	- [Prim](./prim)
 1. Shortest Path(최단 경로)
 	- Dijkstra
 	- Bellman-Ford

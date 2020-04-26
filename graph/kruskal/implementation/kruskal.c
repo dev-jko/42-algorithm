@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 22:42:02 by jko               #+#    #+#             */
-/*   Updated: 2020/04/25 16:13:43 by jko              ###   ########.fr       */
+/*   Updated: 2020/04/26 18:40:13 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,16 +102,15 @@ static bool find_mst(t_graph *graph, t_heap *heap)
 	{
 		if (find_parent(uf, edge.start) == find_parent(uf, edge.end))
 			continue ;
-		if (!(graph_set_edge(graph, edge.start, edge.end, true, edge.cost)))
-		{
-			free(uf);
-			return (false);
-		}
+		if (!graph_set_edge(graph, edge.start, edge.end, true, edge.cost))
+			break ;
 		uf[find_parent(uf, edge.start)] = uf[edge.end];
 		i++;
 	}
 	free(uf);
-	return (true);
+	if (i == graph->size - 1)
+		return (true);
+	return (false);
 }
 
 t_graph *make_mst(const t_graph *src)
