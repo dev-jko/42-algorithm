@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/12 01:05:04 by jko               #+#    #+#             */
-/*   Updated: 2020/04/10 23:47:18 by jko              ###   ########.fr       */
+/*   Updated: 2020/05/14 11:46:55 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void	stack_clear(t_stack *stack, void (*free_data)(void *))
 	{
 		temp = curr;
 		curr = curr->next;
+		temp->next = 0;
 		free_data(temp->data);
 		free(temp);
 	}

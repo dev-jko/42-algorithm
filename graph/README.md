@@ -10,7 +10,7 @@
 	- [Kruskal](./kruskal)
 	- [Prim](./prim)
 1. Shortest Path(최단 경로)
-	- Dijkstra
+	- [Dijkstra](./dijkstra)
 	- Bellman-Ford
 	- Floyd-Warshall
 1. [baekjoon](#baekjoon)
@@ -34,6 +34,7 @@ graph를 사용해 풀어봅시다.
 - graph와 tree의 비교
 - adjacency matrix와 adjacency list 비교
 - cyclic graph, acyclic graph란?
+- MST 알고리즘의 성능 비교(어떤 상황에서 어떤 알고리즘이 좋을까?)
 - 각 각의 최단 경로 알고리즘이 사용되는 경우는?
 	- 단일 출발, 단일 도착, 단일 쌍, 전체 쌍 최단 경로
 	- 음수 가중치, 음수 사이클
