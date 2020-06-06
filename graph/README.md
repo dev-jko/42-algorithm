@@ -23,10 +23,10 @@ graph를 사용해 풀어봅시다.
 - [1197번 최소 스패닝 트리](https://www.acmicpc.net/problem/1197)
 - [1774번 우주신과의 교감](https://www.acmicpc.net/problem/1774)
 - [1922번 네트워크 연결](https://www.acmicpc.net/problem/1922)
+- [1753번 최단경로](https://www.acmicpc.net/problem/1753)
+- [1719번 택배](https://www.acmicpc.net/problem/1719)
 - [번 ](https://www.acmicpc.net/problem/)
-- [번 ](https://www.acmicpc.net/problem/)
-- [번 ](https://www.acmicpc.net/problem/)
-- [번 ](https://www.acmicpc.net/problem/)
+- [1738번 골목길](https://www.acmicpc.net/problem/1738)
 - [번 ](https://www.acmicpc.net/problem/)
 - [번 ](https://www.acmicpc.net/problem/)
 
