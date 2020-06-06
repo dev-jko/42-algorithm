@@ -25,6 +25,7 @@ graph를 사용해 풀어봅시다.
 - [1922번 네트워크 연결](https://www.acmicpc.net/problem/1922)
 - [1753번 최단경로](https://www.acmicpc.net/problem/1753)
 - [1719번 택배](https://www.acmicpc.net/problem/1719)
+- [6593번 상범 빌딩](https://www.acmicpc.net/problem/6593)
 - [번 ](https://www.acmicpc.net/problem/)
 - [1738번 골목길](https://www.acmicpc.net/problem/1738)
 - [번 ](https://www.acmicpc.net/problem/)
