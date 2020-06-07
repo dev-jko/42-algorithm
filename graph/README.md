@@ -11,8 +11,8 @@
 	- [Prim](./prim)
 1. Shortest Path(최단 경로)
 	- [Dijkstra](./dijkstra)
-	- Bellman-Ford
-	- Floyd-Warshall
+	- [Bellman-Ford](./bellman-ford)
+	- [Floyd-Warshall](./floyd-warshall)
 1. [baekjoon](#baekjoon)
 1. [생각해보기](#생각해보기)
 
@@ -29,9 +29,8 @@ graph를 사용해 풀어봅시다.
 - [1738번 골목길](https://www.acmicpc.net/problem/1738)
 - [11657번 타임머신](https://www.acmicpc.net/problem/11657)
 - [1219번 오민식의 고민](https://www.acmicpc.net/problem/1219)
-- [번 ](https://www.acmicpc.net/problem/)
-- [번 ](https://www.acmicpc.net/problem/)
-- [번 ](https://www.acmicpc.net/problem/)
+- [11404번 플로이드](https://www.acmicpc.net/problem/11404)
+- [1238번 파티](https://www.acmicpc.net/problem/1238)
 
 ## 생각해보기
 - graph와 tree의 비교
