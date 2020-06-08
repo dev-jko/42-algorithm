@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/06 12:07:30 by jko               #+#    #+#             */
-/*   Updated: 2020/06/06 13:03:52 by jko              ###   ########.fr       */
+/*   Updated: 2020/06/08 22:25:19 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,16 +51,12 @@ int main(void)
 	graph_set_edge(graph, 0, 1, true, 1);
 	graph_set_edge(graph, 0, 2, true, 5);
 	graph_set_edge(graph, 0, 3, true, 8);
-	graph_set_edge(graph, 0, 4, true, 1);
-	graph_set_edge(graph, 0, 5, true, 10);
 
 	graph_set_edge(graph, 1, 2, true, 11);
-	graph_set_edge(graph, 1, 3, true, 2);
 	graph_set_edge(graph, 1, 4, true, 6);
 	graph_set_edge(graph, 1, 5, true, 4);
 	
 	graph_set_edge(graph, 2, 3, true, 9);
-	graph_set_edge(graph, 2, 4, true, 9);
 	graph_set_edge(graph, 2, 5, true, 10);
 
 	graph_set_edge(graph, 3, 4, true, 3);
@@ -68,6 +64,8 @@ int main(void)
 	
 	graph_set_edge(graph, 4, 5, true, 7);
 	
+	graph_set_edge(graph, 5, 0, true, 3);
+
 	print_graph(graph);
 	printf("\n");
 

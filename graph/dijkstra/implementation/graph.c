@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/22 20:57:47 by jko               #+#    #+#             */
-/*   Updated: 2020/04/25 16:42:05 by jko              ###   ########.fr       */
+/*   Updated: 2020/06/08 22:18:44 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,13 +47,6 @@ bool	graph_set_data(t_graph *graph, uint vertex, void *data)
 		return (false);
 	graph->data[vertex] = data;
 	return (true);
-}
-
-void	*graph_get_data(t_graph *graph, uint vertex)
-{
-	if (!graph || vertex >= graph->size)
-		return (0);
-	return (graph->data[vertex]);
 }
 
 static t_node	*create_elem(uint vertex, int cost)
@@ -144,45 +137,24 @@ static bool		remove_list(t_node **head, uint vertex)
 }
 
 bool	graph_set_edge(
-		t_graph *graph, uint vertex1, uint vertex2, bool state, int cost)
+		t_graph *graph, uint start, uint end, bool state, int cost)
 {
-	t_node	*new1;
-	t_node	*new2;
+	t_node	*new;
 
-	if (!graph || vertex1 >= graph->size || vertex2 >= graph->size)
+	if (!graph || start >= graph->size || end >= graph->size)
 		return (false);
-	if (find_list(graph->list[vertex1], vertex2, 0) == state)
+	if (find_list(graph->list[start], end, 0) == state)
 		return (true);
 	if (!state)
-	{
-		if (remove_list(&(graph->list[vertex1]), vertex2)
-				&& remove_list(&(graph->list[vertex2]), vertex1))
-			return (true);
-		else
-			return (false);
-	}
-	if (!(new1 = create_elem(vertex2, cost)))
+		return (remove_list(&(graph->list[start]), end));
+	if (!(new = create_elem(end, cost)))
 		return (false);
-	if (!(new2 = create_elem(vertex1, cost)))
+	if (!add_list(&(graph->list[start]), new))
 	{
-		free(new1);
-		return (false);
-	}
-	if (!add_list(&(graph->list[vertex1]), new1)
-			|| !add_list(&(graph->list[vertex2]), new2))
-	{
-		free(new1);
-		free(new2);
+		free(new);
 		return (false);
 	}
 	return (true);
-}
-
-bool	graph_get_edge(t_graph *graph, uint vertex1, uint vertex2, int *cost)
-{
-	if (!graph || vertex1 >= graph->size || vertex2 >= graph->size || !cost)
-		return (false);
-	return (find_list(graph->list[vertex1], vertex2, cost));
 }
 
 static void	free_list(t_node *curr)
