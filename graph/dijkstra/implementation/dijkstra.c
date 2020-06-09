@@ -6,7 +6,7 @@
 /*   By: jko <jko@student.42seoul.kr>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/05 18:24:45 by jko               #+#    #+#             */
-/*   Updated: 2020/06/06 13:19:10 by jko              ###   ########.fr       */
+/*   Updated: 2020/06/09 10:57:54 by jko              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ static bool	dijkstra(const t_graph *src, t_heap *heap, uint *result)
 {
 	t_path	*path;
 	t_node	*node;
+	uint	temp;
 
 	while ((path = heap_pop(heap)))
 	{
@@ -77,8 +78,11 @@ static bool	dijkstra(const t_graph *src, t_heap *heap, uint *result)
 		node = src->list[path->vertex];
 		while (node)
 		{
-			if (result[node->vertex] > node->cost + path->cost)
-				if (!push_path(heap, node->vertex, node->cost + path->cost))
+			temp = node->cost + path->cost;
+			if (temp < (uint)node->cost || temp < path->cost)
+				temp = UINT_MAX;
+			if (result[node->vertex] > temp)
+				if (!push_path(heap, node->vertex, temp))
 				{
 					free(path);
 					return (false);
