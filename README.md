@@ -4,7 +4,7 @@
 - 오타, 추가, 수정 Issue & PR & Feedback 무조건 환영합니다!
 - 질문은 Issue로 올려주시면 최대한 답변해드릴께요 :)
 
-## index
+## 이론
 1. [linked list](./linked_list)
 1. [stack](./stack)
 1. [queue](./queue)
@@ -16,11 +16,13 @@
 
 
 -----------------------
-1. 완전탐색(DFS, BFS)
+## 실전
+1. [brute force](./brute_force)
 1. DP
 1. 탐욕법
 1. 분할 정복
-1. 이분 탐색
+1. binary search
+1. topological sort
 1. KMP
 
 
