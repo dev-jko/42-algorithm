@@ -18,6 +18,7 @@
 -----------------------
 ## 실전
 1. [brute force](./brute_force)
+1. [simulation](./simulation)
 1. DP
 1. 탐욕법
 1. 분할 정복
