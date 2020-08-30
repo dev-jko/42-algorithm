@@ -14,28 +14,19 @@
 1. [hash](./hash)
 1. [graph](./graph)
 
-
------------------------
 ## 실전
 1. [brute force](./brute_force)
 1. [simulation](./simulation)
-1. DP
-1. 탐욕법
-1. 분할 정복
+1. [two pointers, sliding window](./two_pointers_sliding_window)
+1. dynamic programming(DP)
 1. binary search
+1. shortest path
+1. union-find
 1. topological sort
-1. KMP
-
-
-## coding convention
-- 우선순위는 가독성, 성능, 짧은 코드 순으로 한다.
-- 42 seoul의 norminette 준수를 기본으로 한다.
-- 1파일 5함수 제한은 제외한다.
-- 함수 25줄 제한은 최대한 지키고 30줄까지 인정한다.
+1. trie
 
 ## contribution & feedback
 [nadarm](https://github.com/nadarm)
 , [365kim](https://github.com/365kim)
-, [nr8121](https://github.com/nr8121)
 , [robolovo](https://github.com/robolovo)
 , [exgs](https://github.com/exgs)
